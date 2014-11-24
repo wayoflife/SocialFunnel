@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>softwareengineering</groupId>
+	<groupId>softwarengineering</groupId>
 	<artifactId>SocialFunnel</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<name>Vaadin Web Application</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.4.0.alpha13</vaadin.version>
+		<vaadin.version>7.0.7</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
 	<repositories>
@@ -75,27 +75,15 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-push</artifactId>
-			<version>${vaadin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 			<version>${vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
 			<scope>provided</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-testbench-api</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-		
 	</dependencies>
 
 	<build>
@@ -122,14 +110,6 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>${vaadin.plugin.version}</version>
@@ -142,18 +122,13 @@
 					</webappDirectory>
 					<hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
 					</hostedWebapp>
-					<!-- Most Vaadin apps don't need this stuff, guide that to target -->
-					<persistentunitcachedir>${project.build.directory}</persistentunitcachedir>
-					<deploy>${project.build.directory}/gwt-deploy</deploy>
-					<!-- Compile report is not typically needed either, saves hunreds of mb disk -->
-					<compileReport>false</compileReport>
 					<noServer>true</noServer>
 					<!-- Remove draftCompile when project is ready -->
 					<draftCompile>false</draftCompile>
-					
+					<compileReport>true</compileReport>
 					<style>OBF</style>
 					<strict>true</strict>
-					<runTarget>http://localhost:8082/</runTarget>
+					<runTarget>http://localhost:8080/</runTarget>
 				</configuration>
 				<executions>
 					<execution>
@@ -163,71 +138,17 @@
 								</modules> -->
 						</configuration>
 						<goals>
-							<goal>clean</goal>
 							<goal>resources</goal>
-							<goal>update-theme</goal>
 							<goal>update-widgetset</goal>
-							<goal>compile-theme</goal>
 							<goal>compile</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
-                        <plugin>  
-                                <groupId>org.eclipse.jetty</groupId>
-                                <artifactId>jetty-maven-plugin</artifactId>
-                                <version>9.2.3.v20140905</version>
-                        </plugin>
-			
-			          
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <stopPort>8007</stopPort>
-                    <stopKey>STOP</stopKey>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-jetty</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                        <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
-                            <daemon>true</daemon>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop-jetty</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-          
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.17</version>
-                <configuration>
-                    <!-- Remove the skipTests line below to run TestBench tests -->
-                    <skipTests>true</skipTests>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-          
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -246,14 +167,12 @@
 											vaadin-maven-plugin
 										</artifactId>
 										<versionRange>
-											[7.4.0.alpha13,)
+											[7.0.7,)
 										</versionRange>
 										<goals>
 											<goal>resources</goal>
 											<goal>update-widgetset</goal>
 											<goal>compile</goal>
-											<goal>update-theme</goal>
-											<goal>compile-theme</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>
@@ -262,19 +181,6 @@
 								</pluginExecution>
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				<plugin>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<configuration>
-						<wtpversion>2.0</wtpversion>
-						<additionalProjectnatures>
-							<projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
-						</additionalProjectnatures>
-						<additionalBuildcommands>
-							<buildcommand>com.vaadin.integration.eclipse.widgetsetBuilder</buildcommand>
-							<buildcommand>com.vaadin.integration.eclipse.addonStylesBuilder</buildcommand>
-						</additionalBuildcommands>
 					</configuration>
 				</plugin>
 			</plugins>
