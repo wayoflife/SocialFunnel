@@ -185,7 +185,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <stopPort>8005</stopPort>
+                    <stopPort>8007</stopPort>
                     <stopKey>STOP</stopKey>
                 </configuration>
                 <executions>
