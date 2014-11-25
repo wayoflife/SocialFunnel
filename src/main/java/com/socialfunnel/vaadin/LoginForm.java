@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
@@ -16,6 +17,7 @@ public class LoginForm extends VerticalLayout {
 	private Button btnLogin = new Button("Login");
 
 	public LoginForm() {
+		addComponent(new Label("Halloele"));
 		addComponent(txtLogin);
 		addComponent(txtPassword);
 		addComponent(btnLogin);
