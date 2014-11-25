@@ -18,7 +18,7 @@ public class LoginForm extends VerticalLayout {
 
 	public LoginForm() {
 		addComponent(new Label("Halloele"));
-		addComponent(new Label("huhu"));
+		addComponent(new Label("huohuo"));
 		addComponent(txtLogin);
 		addComponent(txtPassword);
 		addComponent(btnLogin);
