@@ -1,11 +1,18 @@
 package com.socialfunnel.vaadin;
 
+import java.io.File;
+
 import org.springframework.context.ApplicationContext;
 
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
+import com.vaadin.server.ExternalResource;
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
@@ -15,15 +22,17 @@ public class LoginForm extends VerticalLayout {
 	private TextField txtLogin = new TextField("Login: ");
 	private PasswordField txtPassword = new PasswordField("Password: ");
 	private Button btnLogin = new Button("Login");
+	private Label lblAnmelden = new Label("Anmelden");
+	private Link lnkPasswortVergessen = new Link("Passwort vergessen?", new ExternalResource(""));
 
 	public LoginForm() {
-		addComponent(new Label("Halloele"));
-		addComponent(new Label("huohuo"));
-		addComponent(new Label("omg es geht"));
-		txtLogin.addStyleName("bla");
+		lblAnmelden.setStyleName("h1");
+		addComponent(lblAnmelden);
 		addComponent(txtLogin);
 		addComponent(txtPassword);
+		addComponent(lnkPasswortVergessen);
 		addComponent(btnLogin);
+		
 		LoginFormListener loginFormListener = getLoginFormListener();
 		btnLogin.addClickListener(loginFormListener);
 	}

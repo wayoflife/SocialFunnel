@@ -1,13 +1,46 @@
 package com.socialfunnel.vaadin;
 
+import java.io.File;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-public class LoginView extends VerticalLayout implements View {
+public class LoginView extends HorizontalLayout implements View {
+	
+	private Button btnRegister = new Button("Registrieren");
+	private Label lblKeinAccount = new Label("Noch keinen Account?");
+	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die Möglichkeit...");
+	private Image imgLogo;
+	
+	private HorizontalLayout layout = new HorizontalLayout();
+	private VerticalLayout vl_left = new VerticalLayout();
+	private VerticalLayout vl_right = new VerticalLayout();
+	
 	public LoginView() {
+		setSizeFull();
+		setMargin(true);
+		setSpacing(true);
+		
+		addComponent(vl_left);
+		addComponent(vl_right);
+		
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		imgLogo = new Image("", new FileResource(new File(basepath + "/WEB-INF/images/logo.png")));
+		imgLogo.setWidth("300px");
+		imgLogo.setHeight("300px");
 		LoginForm loginForm = new LoginForm();
-		addComponent(loginForm);
+		vl_left.addComponent(loginForm);
+		vl_left.addComponent(lblKeinAccount);
+		vl_left.addComponent(btnRegister);
+		vl_right.addComponent(imgLogo);
+		vl_right.addComponent(lblWerbespruch);
 	}
 
 	@Override
