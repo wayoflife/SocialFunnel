@@ -2,6 +2,9 @@ package com.socialfunnel.vaadin;
 
 import java.io.File;
 
+import org.springframework.ui.context.support.UiApplicationContextUtils;
+
+import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.ExternalResource;
@@ -12,6 +15,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -38,8 +42,7 @@ public class LoginView extends HorizontalLayout implements View {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
-				ExternalResource bla = new ExternalResource("register");
-				
+				UI.getCurrent().getNavigator().navigateTo("register");
 			}
 		});
 		
