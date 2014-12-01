@@ -13,14 +13,14 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-public class LoginForm extends VerticalLayout {
+public class RegisterForm extends VerticalLayout {
 	private TextField txtLogin = new TextField("Login: ");
 	private PasswordField txtPassword = new PasswordField("Password: ");
 	private Button btnLogin = new Button("Login");
 	private Label lblAnmelden = new Label("Anmelden");
 	private Link lnkPasswortVergessen = new Link("Passwort vergessen?", new ExternalResource(""));
 
-	public LoginForm() {
+	public RegisterForm() {
 		lblAnmelden.setStyleName("h1");
 		addComponent(lblAnmelden);
 		addComponent(txtLogin);

@@ -4,18 +4,15 @@ import java.io.File;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.server.ExternalResource;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
-public class LoginView extends HorizontalLayout implements View {
+public class RegisterView extends HorizontalLayout implements View {
 	
 	private Button btnRegister = new Button("Registrieren");
 	private Label lblKeinAccount = new Label("Noch keinen Account?");
@@ -26,22 +23,13 @@ public class LoginView extends HorizontalLayout implements View {
 	private VerticalLayout vl_left = new VerticalLayout();
 	private VerticalLayout vl_right = new VerticalLayout();
 	
-	public LoginView() {
+	public RegisterView() {
 		setSizeFull();
 		setMargin(true);
 		setSpacing(true);
 		
 		addComponent(vl_left);
 		addComponent(vl_right);
-		
-		btnRegister.addClickListener(new ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				ExternalResource bla = new ExternalResource("register");
-				
-			}
-		});
 		
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		imgLogo = new Image("", new FileResource(new File(basepath + "/WEB-INF/images/logo.png")));
