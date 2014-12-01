@@ -1,1 +1,0 @@
-$wnd.softwareengineering_SocialFunnel_AppWidgetSet.runAsyncCallback2('ubb(1512,1,FEd);_.uc=function n5b(){KTb((!DTb&&(DTb=new PTb),DTb),this.a.d)};kyd(Wh)(2);\n//# sourceURL=softwareengineering.SocialFunnel.AppWidgetSet-2.js\n')

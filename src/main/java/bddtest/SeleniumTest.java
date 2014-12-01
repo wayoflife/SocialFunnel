@@ -29,9 +29,9 @@ public class SeleniumTest {
 
 		// driver = new HtmlUnitDriver();
 
-		driver = new FirefoxDriver();
+		// driver = new FirefoxDriver();
 
-		// driver = new ChromeDriver();
+		 driver = new ChromeDriver();
 
 		// driver = new InternetExplorerDriver ();
 

@@ -1,5 +1,6 @@
 package com.socialfunnel.vaadin;
 
+
 import org.springframework.context.ApplicationContext;
 
 import softwarengineering.SocialFunnel.MyVaadinUI;
