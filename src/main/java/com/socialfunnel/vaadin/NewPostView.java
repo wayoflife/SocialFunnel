@@ -13,8 +13,6 @@ import com.vaadin.ui.VerticalLayout;
 public class NewPostView extends VerticalLayout implements View{
 	
 	private Headline headline = new Headline();
-	private Image imgLogo;
-	private Label lblName = new Label("SocialFunnel");
 	private TextArea ttaNachricht = new TextArea("Post Verfassen");
 	private Button btnSichtbarkeit = new Button("Sichtbarkeit einstellen");
 	private Button btnDateiAnhang = new Button("Datei hinzufügen");
@@ -33,7 +31,6 @@ public class NewPostView extends VerticalLayout implements View{
 	public NewPostView() {
 		// TODO Auto-generated constructor stub
 		addComponent(headline);
-		hl1.addComponent(lblName);
 		hl2.addComponent(ttaNachricht);
 		vlChb.addComponent(chbFacebook);
 		vlChb.addComponent(chbTwitter);
