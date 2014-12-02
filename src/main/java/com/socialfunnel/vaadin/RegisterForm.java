@@ -1,11 +1,5 @@
 package com.socialfunnel.vaadin;
 
-import org.springframework.context.ApplicationContext;
-
-import softwarengineering.SocialFunnel.MyVaadinUI;
-
-import com.google.gwt.user.datepicker.client.DateBox;
-import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
@@ -13,9 +7,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-//kmmentar
+
 public class RegisterForm extends VerticalLayout {
 	private TextField txtFirstName = new TextField("Vorname: ");
 	private TextField txtSecondName = new TextField("Nachname: ");
@@ -42,15 +35,15 @@ public class RegisterForm extends VerticalLayout {
 		addComponent(chbAkzeptieren);
 		addComponent(btnRegistrieren);
 		
-		RegisterFormListener RegisterFormListener = getRegisterFormListener();
-		btnRegistrieren.addClickListener(RegisterFormListener);
+//		RegisterFormListener RegisterFormListener = getRegisterFormListener();
+//		btnRegistrieren.addClickListener(null);
 	}
 
-	public RegisterFormListener getRegisterFormListener() {
-		MyVaadinUI ui = (MyVaadinUI) UI.getCurrent();
-		ApplicationContext context = ui.getApplicationContext();
-		return context.getBean(RegisterFormListener.class);
-	}
+//	public RegisterFormListener getRegisterFormListener() {
+////		MyVaadinUI ui = (MyVaadinUI) UI.getCurrent();
+////		ApplicationContext context = ui.getApplicationContext();
+////		return context.getBean(RegisterFormListener.class);
+//	}
 
 	public TextField getTxtFirstName() {
 		return txtFirstName;
@@ -75,6 +68,4 @@ public class RegisterForm extends VerticalLayout {
 	public TextField getTxtGeburtstag() {
 		return txtGeburtstag;
 	}
-
-
 }

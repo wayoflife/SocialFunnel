@@ -1,21 +1,7 @@
 package com.socialfunnel.vaadin;
 
-import org.springframework.context.ApplicationContext;
-
-import softwarengineering.SocialFunnel.MyVaadinUI;
-
-import com.google.gwt.user.datepicker.client.DateBox;
-import com.vaadin.data.validator.EmailValidator;
-import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Link;
-import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
 
 public class Headline extends HorizontalLayout {
 	//kmmentar

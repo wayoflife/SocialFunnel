@@ -23,7 +23,7 @@ public class LoginView extends HorizontalLayout implements View {
 	
 	private Button btnRegister = new Button("Registrieren");
 	private Label lblKeinAccount = new Label("Noch keinen Account?");
-	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die Möglichkeit...");
+	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die Möglichkeit deine Freunde zu stalken");
 	private Image imgLogo;
 	
 	private HorizontalLayout layout = new HorizontalLayout();
