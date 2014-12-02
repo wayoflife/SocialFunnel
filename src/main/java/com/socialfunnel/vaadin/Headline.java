@@ -63,6 +63,15 @@ public class Headline extends HorizontalLayout {
 				UI.getCurrent().getNavigator().navigateTo("mainpage");
 			}
 		});
+		
+		btnNetzwerke.addClickListener(new ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI.getCurrent().getNavigator().navigateTo("mynetworks");
+			}
+		});
 
 		btnNeuerPost.addClickListener(new ClickListener() {
 			
