@@ -31,6 +31,7 @@ public class Headline extends HorizontalLayout {
 	public Headline() {
 		// TODO Auto-generated constructor stub
 	
+		lblName.setStyleName("h1");
 		hl1.addComponent(btnStartseite);
 		hl1.addComponent(btnNeuerPost);
 		hl1.addComponent(btnNetzwerke);
