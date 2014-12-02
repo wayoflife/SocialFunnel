@@ -66,7 +66,7 @@ public class RegisterForm extends VerticalLayout {
 		return txtPassword2;
 	}
 
-	public TextField getTxtGeburtstag() {
+	public DateField getTxtGeburtstag() {
 		return txtGeburtstag;
 	}
 }
