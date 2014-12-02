@@ -17,7 +17,7 @@ public class NetworkChangeView extends VerticalLayout implements View{
 		// TODO Auto-generated constructor stub
 	addComponent(headline);
 	addComponent(btnNewNetwork);
-	//addComponent(changeform);
+	addComponent(changeform);
 	
 	}
 	
