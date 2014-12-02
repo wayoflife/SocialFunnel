@@ -30,6 +30,7 @@ public class NewPostView extends VerticalLayout implements View{
 	
 	public NewPostView() {
 		// TODO Auto-generated constructor stub
+		setSizeFull();
 		addComponent(headline);
 		hl2.addComponent(ttaNachricht);
 		vlChb.addComponent(chbFacebook);
