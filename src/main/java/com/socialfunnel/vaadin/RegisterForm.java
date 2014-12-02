@@ -15,7 +15,7 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-
+//kmmentar
 public class RegisterForm extends VerticalLayout {
 	private TextField txtFirstName = new TextField("Vorname: ");
 	private TextField txtSecondName = new TextField("Nachname: ");

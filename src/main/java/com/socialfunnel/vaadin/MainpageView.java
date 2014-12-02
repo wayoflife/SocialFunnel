@@ -17,7 +17,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 public class MainpageView extends VerticalLayout{
-	
+	//kmmentar
 	//headline headline = new headline();
 	private VerticalLayout vlLeft = new VerticalLayout();
 	

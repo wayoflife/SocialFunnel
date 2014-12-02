@@ -18,7 +18,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 public class Headline extends HorizontalLayout {
-
+	//kmmentar
 	private Button btnStartseite = new Button("Startseite");
 	private Button btnNeuerPost = new Button("Neuer Post");
 	private Button btnNetzwerke = new Button("Meine Netzwerke");

@@ -18,7 +18,7 @@ import com.vaadin.ui.UI;
 public class RegisterFormListener implements Button.ClickListener {
 	@Autowired
 	private AuthManager authManager;
-
+//kmmentar
 	@Override
 	public void buttonClick(Button.ClickEvent event) {
 		try {
