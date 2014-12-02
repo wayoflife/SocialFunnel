@@ -7,6 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.socialfunnel.ui.views.LoginView;
+import com.socialfunnel.ui.views.MainpageView;
+import com.socialfunnel.ui.views.NetworkChangeView;
+import com.socialfunnel.ui.views.NewPostView;
 import com.socialfunnel.ui.views.RegisterView;
 import com.socialfunnel.ui.views.UserView;
 import com.vaadin.annotations.PreserveOnRefresh;
@@ -33,6 +36,9 @@ public class MyVaadinUI extends UI {
 		navigator.addView("login", LoginView.class);
 		navigator.addView("register", RegisterView.class);
 		navigator.addView("user", UserView.class);
+		navigator.addView("mainpage", MainpageView.class);
+		navigator.addView("newpost", NewPostView.class);
+		navigator.addView("mynetworks", NetworkChangeView.class);
 		navigator.navigateTo("login");
 		setNavigator(navigator);
 	}

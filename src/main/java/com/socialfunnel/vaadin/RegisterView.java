@@ -1,4 +1,4 @@
-package com.socialfunnel.ui.views;
+package com.socialfunnel.vaadin;
 
 import java.io.File;
 
