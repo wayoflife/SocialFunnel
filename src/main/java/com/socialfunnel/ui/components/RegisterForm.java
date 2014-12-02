@@ -3,6 +3,7 @@ package com.socialfunnel.ui.components;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
@@ -15,7 +16,7 @@ public class RegisterForm extends VerticalLayout {
 	private TextField txtEmail = new TextField("Emailadresse: ");
 	private PasswordField txtPassword = new PasswordField("Passwort: ");
 	private PasswordField txtPassword2 = new PasswordField("Passwort wiederholen: ");
-	private TextField txtGeburtstag = new TextField("Geburtstag: ");
+	private DateField txtGeburtstag = new DateField("Geburtstag: ");
 	private Button btnRegistrieren = new Button("Registrieren");
 	private CheckBox chbAkzeptieren = new CheckBox("Ich akzeptiere die Nutzungsbedingungen");
 	private Label lblRegistrieren = new Label("Registrieren");
