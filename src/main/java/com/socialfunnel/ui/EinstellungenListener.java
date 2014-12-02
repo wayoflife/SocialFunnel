@@ -1,7 +1,10 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui;
+
+import org.springframework.stereotype.Component;
 
 import com.vaadin.ui.Button;
 
+@Component
 public class EinstellungenListener implements Button.ClickListener {
 
 	@Override

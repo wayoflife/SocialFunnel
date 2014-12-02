@@ -1,4 +1,4 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -9,22 +9,24 @@ import org.springframework.stereotype.Component;
 
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
+import com.socialfunnel.auth.AuthManager;
+import com.socialfunnel.ui.components.RegisterForm;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 
 @Component
-public class LoginFormListener implements Button.ClickListener {
+public class RegisterFormListener implements Button.ClickListener {
 	@Autowired
 	private AuthManager authManager;
-
+	
 	@Override
 	public void buttonClick(Button.ClickEvent event) {
 		try {
 			Button source = event.getButton();
-			LoginForm parent = (LoginForm) source.getParent();
-			String username = parent.getTxtLogin().getValue();
+			RegisterForm parent = (RegisterForm) source.getParent();
+			String username = parent.getTxtFirstName().getValue() + parent.getTxtSecondName().getValue();
 			String password = parent.getTxtPassword().getValue();
 			UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 					username, password);

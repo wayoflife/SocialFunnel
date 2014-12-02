@@ -1,9 +1,10 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui.views;
 
 import java.io.File;
 
 import org.springframework.ui.context.support.UiApplicationContextUtils;
 
+import com.socialfunnel.ui.components.LoginForm;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;

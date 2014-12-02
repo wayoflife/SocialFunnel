@@ -1,12 +1,15 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
 
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 
+@Component
 public class LogoutListener implements Button.ClickListener {
+	
 	@Override
 	public void buttonClick(Button.ClickEvent clickEvent) {
 		SecurityContextHolder.clearContext();

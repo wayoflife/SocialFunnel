@@ -1,4 +1,4 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui.components;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;

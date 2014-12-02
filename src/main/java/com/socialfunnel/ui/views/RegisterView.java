@@ -1,7 +1,8 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui.views;
 
 import java.io.File;
 
+import com.socialfunnel.ui.components.RegisterForm;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FileResource;

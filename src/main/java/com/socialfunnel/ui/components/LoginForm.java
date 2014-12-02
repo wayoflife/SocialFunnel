@@ -1,10 +1,11 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.ui.components;
 
 
 import org.springframework.context.ApplicationContext;
 
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
+import com.socialfunnel.ui.LoginFormListener;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;

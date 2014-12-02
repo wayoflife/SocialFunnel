@@ -1,4 +1,4 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.service;
 
 public class User {
 	private String name;

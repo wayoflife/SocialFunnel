@@ -1,4 +1,4 @@
-package com.socialfunnel.vaadin;
+package com.socialfunnel.service;
 
 import java.util.ArrayList;
 import java.util.List;

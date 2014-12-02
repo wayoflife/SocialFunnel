@@ -6,9 +6,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import com.socialfunnel.vaadin.LoginView;
-import com.socialfunnel.vaadin.RegisterView;
-import com.socialfunnel.vaadin.UserView;
+import com.socialfunnel.ui.views.LoginView;
+import com.socialfunnel.ui.views.RegisterView;
+import com.socialfunnel.ui.views.UserView;
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
