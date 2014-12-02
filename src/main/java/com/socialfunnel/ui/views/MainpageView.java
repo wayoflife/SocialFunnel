@@ -6,7 +6,6 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.VerticalLayout;
 
 public class MainpageView extends VerticalLayout implements View{
-	//kmmentar
 	Headline headline = new Headline();
 	private VerticalLayout vlLeft = new VerticalLayout();
 	
