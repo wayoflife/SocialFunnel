@@ -9,8 +9,9 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.VerticalLayout;
 
-public class NetworkChangeForm extends HorizontalLayout{
+public class NetworkChangeForm extends VerticalLayout{
 	
 	private ComboBox cbbNetzwerke = new ComboBox("Netzwerk");
 	private TextField txtLogin = new TextField("Login");
