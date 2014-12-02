@@ -13,8 +13,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 public class RegisterView extends HorizontalLayout implements View {
-	private Button btnRegister = new Button("Registrieren");
-	private Label lblRegistrieren = new Label("Registrieren");
 	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die Möglichkeit...");
 	private Image imgLogo;
 	
@@ -35,8 +33,6 @@ public class RegisterView extends HorizontalLayout implements View {
 		imgLogo.setHeight("300px");
 		RegisterForm RegisterForm = new RegisterForm();
 		vl_left.addComponent(RegisterForm);
-		vl_left.addComponent(lblRegistrieren);
-		vl_left.addComponent(btnRegister);
 		vl_right.addComponent(imgLogo);
 		vl_right.addComponent(lblWerbespruch);
 	}
