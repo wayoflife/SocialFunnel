@@ -23,8 +23,8 @@ public class RegisterFormListener implements Button.ClickListener {
 	public void buttonClick(Button.ClickEvent event) {
 		try {
 			Button source = event.getButton();
-			LoginForm parent = (LoginForm) source.getParent();
-			String username = parent.getTxtLogin().getValue();
+			RegisterForm parent = (RegisterForm) source.getParent();
+			String username = parent.getTxtFirstName().getValue() + parent.getTxtSecondName().getValue();
 			String password = parent.getTxtPassword().getValue();
 			UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 					username, password);

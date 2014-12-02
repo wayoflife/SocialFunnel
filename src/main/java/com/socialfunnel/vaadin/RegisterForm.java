@@ -4,8 +4,11 @@ import org.springframework.context.ApplicationContext;
 
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
+import com.google.gwt.user.datepicker.client.DateBox;
+import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
@@ -14,35 +17,64 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 public class RegisterForm extends VerticalLayout {
-	private TextField txtLogin = new TextField("Login: ");
-	private PasswordField txtPassword = new PasswordField("Password: ");
-	private Button btnLogin = new Button("Login");
-	private Label lblAnmelden = new Label("Anmelden");
-	private Link lnkPasswortVergessen = new Link("Passwort vergessen?", new ExternalResource(""));
+	private TextField txtFirstName = new TextField("Vorname: ");
+	private TextField txtSecondName = new TextField("Nachname: ");
+	private TextField txtEmail = new TextField("Emailadresse: ");
+	private PasswordField txtPassword = new PasswordField("Passwort: ");
+	private PasswordField txtPassword2 = new PasswordField("Passwort wiederholen: ");
+	private TextField txtGeburtstag = new TextField("Geburtstag: ");
+	private Button btnRegistrieren = new Button("Registrieren");
+	private CheckBox chbAkzeptieren = new CheckBox("Ich akzeptiere die Nutzungsbedingungen");
+	private Label lblRegistrieren = new Label("Registrieren");
+	private Link lnkNutzungsbedingungen = new Link("Nutzungsbedingungen", new ExternalResource(""));
 
 	public RegisterForm() {
-		lblAnmelden.setStyleName("h1");
-		addComponent(lblAnmelden);
-		addComponent(txtLogin);
+		lblRegistrieren.setStyleName("h1");
+		addComponent(lblRegistrieren);
+		addComponent(txtFirstName);
+		addComponent(txtSecondName);
+		addComponent(txtEmail);
 		addComponent(txtPassword);
-		addComponent(lnkPasswortVergessen);
-		addComponent(btnLogin);
+		addComponent(txtPassword2);
+		addComponent(txtGeburtstag);
 		
-		LoginFormListener loginFormListener = getLoginFormListener();
-		btnLogin.addClickListener(loginFormListener);
+		addComponent(lnkNutzungsbedingungen);
+		addComponent(chbAkzeptieren);
+		addComponent(btnRegistrieren);
+		
+		RegisterFormListener RegisterFormListener = getRegisterFormListener();
+		btnRegistrieren.addClickListener(RegisterFormListener);
 	}
 
-	public LoginFormListener getLoginFormListener() {
+	public RegisterFormListener getRegisterFormListener() {
 		MyVaadinUI ui = (MyVaadinUI) UI.getCurrent();
 		ApplicationContext context = ui.getApplicationContext();
-		return context.getBean(LoginFormListener.class);
+		return context.getBean(RegisterFormListener.class);
 	}
 
-	public TextField getTxtLogin() {
-		return txtLogin;
+	public TextField getTxtFirstName() {
+		return txtFirstName;
+	}
+
+	public TextField getTxtSecondName() {
+		return txtSecondName;
+	}
+
+	public TextField getTxtEmail() {
+		return txtEmail;
 	}
 
 	public PasswordField getTxtPassword() {
 		return txtPassword;
 	}
+
+	public PasswordField getTxtPassword2() {
+		return txtPassword2;
+	}
+
+	public TextField getTxtGeburtstag() {
+		return txtGeburtstag;
+	}
+
+
 }

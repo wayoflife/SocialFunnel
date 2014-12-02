@@ -15,8 +15,8 @@ import com.vaadin.ui.VerticalLayout;
 public class RegisterView extends HorizontalLayout implements View {
 	
 	private Button btnRegister = new Button("Registrieren");
-	private Label lblKeinAccount = new Label("Noch keinen Account?");
-	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die Möglichkeit...");
+	private Label lblRegistrieren = new Label("Registrieren");
+	private Label lblWerbespruch = new Label("Mit Social Funnel hast du die MÃ¶glichkeit...");
 	private Image imgLogo;
 	
 	private HorizontalLayout layout = new HorizontalLayout();
@@ -35,9 +35,9 @@ public class RegisterView extends HorizontalLayout implements View {
 		imgLogo = new Image("", new FileResource(new File(basepath + "/WEB-INF/images/logo.png")));
 		imgLogo.setWidth("300px");
 		imgLogo.setHeight("300px");
-		LoginForm loginForm = new LoginForm();
-		vl_left.addComponent(loginForm);
-		vl_left.addComponent(lblKeinAccount);
+		RegisterForm RegisterForm = new RegisterForm();
+		vl_left.addComponent(RegisterForm);
+		vl_left.addComponent(lblRegistrieren);
 		vl_left.addComponent(btnRegister);
 		vl_right.addComponent(imgLogo);
 		vl_right.addComponent(lblWerbespruch);
