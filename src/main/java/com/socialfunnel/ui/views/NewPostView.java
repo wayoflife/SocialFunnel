@@ -1,6 +1,7 @@
 package com.socialfunnel.ui.views;
 
 import com.socialfunnel.ui.components.Headline;
+import com.socialfunnel.ui.components.SC_Menubar;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -12,6 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 public class NewPostView extends VerticalLayout implements View{
 	
 	private Headline headline = new Headline();
+	private SC_Menubar menubar = new SC_Menubar();
 	private TextArea ttaNachricht = new TextArea("Post Verfassen");
 	private Button btnSichtbarkeit = new Button("Sichtbarkeit einstellen");
 	private Button btnDateiAnhang = new Button("Datei hinzufügen");
@@ -30,7 +32,8 @@ public class NewPostView extends VerticalLayout implements View{
 	public NewPostView() {
 		// TODO Auto-generated constructor stub
 		setSizeFull();
-		addComponent(headline);
+//		addComponent(headline);
+		addComponent(menubar);
 		hl2.addComponent(ttaNachricht);
 		vlChb.addComponent(chbFacebook);
 		vlChb.addComponent(chbTwitter);

@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.socialfunnel.ui.LogoutListener;
+import com.socialfunnel.ui.components.SC_Menubar;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -17,8 +18,12 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 public class UserView extends VerticalLayout implements View {
+	
+	private SC_Menubar menubar = new SC_Menubar();
+	
 	public void enter(ViewChangeListener.ViewChangeEvent event) {
 		removeAllComponents();
+		addComponent(menubar);
 		SecurityContext context = SecurityContextHolder.getContext();
 		Authentication authentication = context.getAuthentication();
 		if (authentication != null && authentication.isAuthenticated()) {
