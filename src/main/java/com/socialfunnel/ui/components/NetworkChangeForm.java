@@ -3,6 +3,7 @@ package com.socialfunnel.ui.components;
 
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
@@ -10,6 +11,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class NetworkChangeForm extends VerticalLayout{
 	
@@ -36,6 +38,17 @@ public NetworkChangeForm() {
 	addComponent(hl2);
 	
 	cbbNetzwerke.addItem("Facebook");
+	cbbNetzwerke.addItem("Twitter");
+	
+	btnDelete.addClickListener(new ClickListener() {
+		
+		@Override
+		public void buttonClick(ClickEvent event) {
+			// TODO Auto-generated method stub
+			removeComponent(btnDelete.getParent());
+		}
+	});
+	
 
 }
 }
