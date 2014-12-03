@@ -7,29 +7,25 @@
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>Vaadin Web Application</name>
-	
-	<parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.1.9.RELEASE</version>
-    </parent>
-    
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<vaadin.version>7.0.7</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<spring.version>4.1.2.RELEASE</spring.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
 	</properties>
+
 	<repositories>
 		<repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>vaadin-addons</id>
 			<url>http://maven.vaadin.com/vaadin-addons</url>
@@ -52,13 +48,13 @@
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
 		<pluginRepository>
 			<id>vaadin-snapshots</id>
 			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
@@ -72,13 +68,10 @@
 	</pluginRepositories>
 	<dependencies>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-facebook</artifactId>
-        </dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-facebook</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
@@ -89,21 +82,12 @@
 			<artifactId>vaadin-client-compiler</artifactId>
 			<version>${vaadin.version}</version>
 		</dependency>
-		<!--
-		  Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
-		  
-		  For widgetset compilation, vaadin-client-compiler is automatically added on the
-		  compilation classpath by vaadin-maven-plugin so normally there is no need for an
-		  explicit dependency.
-		-->
-		<!--
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiler</artifactId>
-			<version>${vaadin.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		-->
+		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory). 
+			For widgetset compilation, vaadin-client-compiler is automatically added 
+			on the compilation classpath by vaadin-maven-plugin so normally there is 
+			no need for an explicit dependency. -->
+		<!-- <dependency> <groupId>com.vaadin</groupId> <artifactId>vaadin-client-compiler</artifactId> 
+			<version>${vaadin.version}</version> <scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
@@ -191,24 +175,56 @@
 			<artifactId>jchronic</artifactId>
 			<version>0.2.6</version>
 		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>2.44.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -267,16 +283,17 @@
 					</execution>
 				</executions>
 			</plugin>
-<plugin>
-	<groupId>org.mortbay.jetty</groupId>
-	<artifactId>jetty-maven-plugin</artifactId>
-	<version>8.1.15.v20140411</version>
-</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.15.v20140411</version>
+			</plugin>
 
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

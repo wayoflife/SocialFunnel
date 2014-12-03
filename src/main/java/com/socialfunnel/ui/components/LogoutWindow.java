@@ -11,7 +11,6 @@ import com.vaadin.ui.themes.Reindeer;
 
 public class LogoutWindow extends Window {
 
-	private static final long serialVersionUID = 5709163607418676737L;
 	private GridLayout layout = null;
 	private Button cancel = null;
 	private Button logout = null;
