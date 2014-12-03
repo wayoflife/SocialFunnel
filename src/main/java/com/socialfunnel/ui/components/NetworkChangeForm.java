@@ -45,7 +45,7 @@ public NetworkChangeForm() {
 		@Override
 		public void buttonClick(ClickEvent event) {
 			// TODO Auto-generated method stub
-			removeComponent(btnDelete.getParent().getParent());
+			removeComponent(btnDelete.getParent().getParent().getParent());
 		}
 	});
 	
