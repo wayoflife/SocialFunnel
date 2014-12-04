@@ -19,8 +19,8 @@ public class AuthManager implements AuthenticationManager {
 	@Autowired
 	private UserService userService;
 
-	public Authentication authenticate(Authentication auth)
-			throws AuthenticationException {
+	public Authentication authenticate(Authentication auth) throws AuthenticationException {
+		
 		String username = (String) auth.getPrincipal();
 		String password = (String) auth.getCredentials();
 		UserDetails user = userService.loadUserByUsername(username);

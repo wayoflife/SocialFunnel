@@ -6,12 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.social.facebook.api.Facebook;
 
 import com.socialfunnel.auth.AuthManager;
+import com.socialfunnel.facebook.HelloController;
 import com.socialfunnel.service.UserService;
 import com.socialfunnel.ui.LoginFormListener;
 import com.socialfunnel.ui.LogoutListener;
 import com.socialfunnel.ui.RegisterFormListener;
-
-import facebookConnect.HelloController;
 
 @Configuration
 @ComponentScan(basePackages = { "com.socialfunnel.ui", "com.socialfunnel.auth", "com.socialfunnel.service", "facebookConnect" })
