@@ -67,7 +67,7 @@ public final class DBHelper{
 	public String[] getUserByName(String name) throws SQLException {
 		res = st.executeQuery("SELECT * FROM user WHERE name = '" + name + "'");
 		res.next();
-		return new String[] {res.getString("name"), res.getString("passwort")};
+		return new String[] {res.getString("name"), res.getString("password")};
 	}
 	
 	public boolean isMailAvailable(String mail) throws SQLException {
