@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.social.facebook.api.Facebook;
 
 import com.socialfunnel.auth.AuthManager;
-import com.socialfunnel.facebook.HelloController;
 import com.socialfunnel.service.UserService;
 import com.socialfunnel.ui.LoginFormListener;
 import com.socialfunnel.ui.LogoutListener;

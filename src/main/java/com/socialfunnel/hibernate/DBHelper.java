@@ -55,8 +55,8 @@ public final class DBHelper{
 		SQLContainer container = new SQLContainer(tq);
 		Object id = container.addItem();
 		container.getContainerProperty(id, "name").setValue(name);
-//		container.getContainerProperty(id, "password").setValue(PWCrypt.getInstance().encrypt(password));
-		container.getContainerProperty(id, "password").setValue(password);
+		container.getContainerProperty(id, "password").setValue(PWCrypt.getInstance().encrypt(password));
+//		container.getContainerProperty(id, "password").setValue(password);
 		container.getContainerProperty(id, "enabled").setValue(true);
 		container.getContainerProperty(id, "accountnonexpired").setValue(true);
 		container.getContainerProperty(id, "credentialsnonexpired").setValue(false);
