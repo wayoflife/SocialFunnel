@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import softwarengineering.SocialFunnel.MyVaadinUI;
 
 import com.socialfunnel.auth.AuthManager;
+import com.socialfunnel.hibernate.DBHelper;
+import com.socialfunnel.hibernate.PWCrypt;
 import com.socialfunnel.ui.components.LoginForm;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
@@ -27,7 +29,7 @@ public class LoginFormListener implements Button.ClickListener {
 			Button source = event.getButton();
 			LoginForm parent = (LoginForm) source.getParent();
 			String username = parent.getTxtLogin().getValue();
-			String password = parent.getTxtPassword().getValue();
+			String password =  PWCrypt.getInstance().encrypt(parent.getTxtPassword().getValue());
 			UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 					username, password);
 			Authentication result = authManager.authenticate(request);
@@ -37,6 +39,8 @@ public class LoginFormListener implements Button.ClickListener {
 			navigator.navigateTo("user");
 		} catch (AuthenticationException e) {
 			Notification.show("Authentication failed: " + e.getMessage());
+		} catch (Exception e) {
+			Notification.show("Authentication failed: Unknown error");
 		}
 	}
 }

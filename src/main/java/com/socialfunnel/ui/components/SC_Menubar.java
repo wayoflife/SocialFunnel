@@ -6,12 +6,16 @@ import com.vaadin.ui.UI;
 
 public class SC_Menubar extends MenuBar{
 	
+	private static final long serialVersionUID = 1L;
+
 	public SC_Menubar() {
 		final Navigator navi = UI.getCurrent().getNavigator();
 		this.setWidth("100%");
 		
 		MenuBar.Command menucommand = new MenuBar.Command() {
 			
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void menuSelected(MenuItem selectedItem) {
 				switch (selectedItem.getText()) {

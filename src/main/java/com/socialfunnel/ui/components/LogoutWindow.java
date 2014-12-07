@@ -38,7 +38,7 @@ public class LogoutWindow extends Window {
 
 	private void init() {
 		cancel = new Button("cancel", new Button.ClickListener() {
-			private static final long serialVersionUID = -5326625991944420831L;
+			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void buttonClick(ClickEvent event) {

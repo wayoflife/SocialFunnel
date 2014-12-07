@@ -1,21 +1,33 @@
 package com.socialfunnel.ui.components;
 
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+
+import com.socialfunnel.hibernate.DBHelper;
+import com.vaadin.data.Property.ReadOnlyException;
+import com.vaadin.data.validator.EmailValidator;
+import com.vaadin.data.validator.RegexpValidator;
+import com.vaadin.data.validator.StringLengthValidator;
+import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class RegisterForm extends VerticalLayout {
-	private TextField txtFirstName = new TextField("Vorname: ");
-	private TextField txtSecondName = new TextField("Nachname: ");
-	private TextField txtEmail = new TextField("Emailadresse: ");
-	private PasswordField txtPassword = new PasswordField("Passwort: ");
-	private PasswordField txtPassword2 = new PasswordField("Passwort wiederholen: ");
+	private static final long serialVersionUID = 1L;
+	private TextField txtFirstName;
+	private TextField txtSecondName;
+	private TextField txtEmail;
+	private PasswordField txtPassword;
+	private PasswordField txtPassword2;
 	private DateField txtGeburtstag = new DateField("Geburtstag: ");
 	private Button btnRegistrieren = new Button("Registrieren");
 	private CheckBox chbAkzeptieren = new CheckBox("Ich akzeptiere die Nutzungsbedingungen");
@@ -23,6 +35,9 @@ public class RegisterForm extends VerticalLayout {
 	private Link lnkNutzungsbedingungen = new Link("Nutzungsbedingungen", new ExternalResource(""));
 
 	public RegisterForm() {
+		initButtons();
+		initFields();
+		
 		lblRegistrieren.setStyleName("h1");
 		addComponent(lblRegistrieren);
 		addComponent(txtFirstName);
@@ -36,37 +51,83 @@ public class RegisterForm extends VerticalLayout {
 		addComponent(chbAkzeptieren);
 		addComponent(btnRegistrieren);
 		
-//		RegisterFormListener RegisterFormListener = getRegisterFormListener();
-//		btnRegistrieren.addClickListener(null);
 	}
 
-//	public RegisterFormListener getRegisterFormListener() {
-////		MyVaadinUI ui = (MyVaadinUI) UI.getCurrent();
-////		ApplicationContext context = ui.getApplicationContext();
-////		return context.getBean(RegisterFormListener.class);
-//	}
-
-	public TextField getTxtFirstName() {
-		return txtFirstName;
+	private void initFields() {
+		txtEmail = new TextField();
+		txtEmail.setCaption("Email");
+		txtEmail.addValidator(new EmailValidator("Keine gültige Email"));
+		txtEmail.setMaxLength(40);
+		
+		txtFirstName = new TextField();
+		txtFirstName.setCaption("Vorname");
+		txtFirstName.addValidator(new StringLengthValidator("Atleast 2, max 30 characters", 2, 30, false));
+		txtFirstName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
+		txtFirstName.setMaxLength(30);
+		
+		txtSecondName = new TextField();
+		txtSecondName.setCaption("Nachname");
+		txtSecondName.addValidator(new StringLengthValidator("Atleast 2, max 30 characters", 2, 30, false));
+		txtSecondName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
+		txtSecondName.setMaxLength(30);
+		
+		txtPassword = new PasswordField();
+		txtPassword.setCaption("Passwort");
+		txtPassword.addValidator(new StringLengthValidator("Passwortlänge zwischen 6 und 20 Zeichen",
+				6, 20, false));
+		txtPassword.setMaxLength(20);
+		
+		txtPassword2 = new PasswordField();
+		txtPassword2.setCaption("Passwort wiederholen");
+		txtPassword2.setMaxLength(20);
 	}
 
-	public TextField getTxtSecondName() {
-		return txtSecondName;
+	private void initButtons() {
+		btnRegistrieren = new Button("Register", new Button.ClickListener() {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				if(registerPossible()){
+					try {
+						new DBHelper().addNewUser(txtEmail.getValue(), txtPassword.getValue());
+						getUI().getNavigator().navigateTo("login");
+					} catch (SQLException e) {
+						Notification.show("Cannot connect to Database! Try again later.",
+								Notification.Type.WARNING_MESSAGE);
+						e.printStackTrace();
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					} catch (ReadOnlyException e) {
+						e.printStackTrace();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+        });		
+		btnRegistrieren.setClickShortcut(KeyCode.ENTER, null);
 	}
 
-	public TextField getTxtEmail() {
-		return txtEmail;
-	}
-
-	public PasswordField getTxtPassword() {
-		return txtPassword;
-	}
-
-	public PasswordField getTxtPassword2() {
-		return txtPassword2;
-	}
-
-	public DateField getTxtGeburtstag() {
-		return txtGeburtstag;
+	protected boolean registerPossible() {
+		if(!(txtEmail.isValid() && txtFirstName.isValid() && txtSecondName.isValid() && txtPassword.isValid())){
+			Notification.show("One or more fields contain invalid values! Fix it!", Notification.Type.WARNING_MESSAGE);
+			return false;
+		}
+		try {
+			if(!new DBHelper().isMailAvailable(txtEmail.getValue())){
+				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
+				return false;
+			}
+		} catch (SQLException e) {
+			Notification.show("Cannot validate email! Try again later.", Notification.Type.WARNING_MESSAGE);
+			return false;
+		}
+		if(!txtPassword.getValue().equals(txtPassword2.getValue())){
+			Notification.show("Passwords do not match!", Notification.Type.WARNING_MESSAGE);
+			return false;
+		}
+		return true;
 	}
 }

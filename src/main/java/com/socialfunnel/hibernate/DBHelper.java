@@ -71,8 +71,8 @@ public final class DBHelper{
 	}
 	
 	public boolean isMailAvailable(String mail) throws SQLException {
-		res = st.executeQuery("SELECT email FROM user");
-		while(res.next()) if(res.getString("email").equals(mail)) return false;
+		res = st.executeQuery("SELECT name FROM user");
+		while(res.next()) if(res.getString("name").equals(mail)) return false;
 		return true;
 	}
 	
