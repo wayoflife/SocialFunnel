@@ -1,4 +1,4 @@
-package bddtest;
+package com.socialfunnel.bddtest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,21 +29,21 @@ public class SeleniumTest {
 
 		// driver = new HtmlUnitDriver();
 
-		// driver = new FirefoxDriver();
+		driver = new FirefoxDriver();
 
-		 driver = new ChromeDriver();
+		// driver = new ChromeDriver();
 
 		// driver = new InternetExplorerDriver ();
 
 		// driver = new SafariDriver();
 
-		baseUrl = "http://www.google.de/";
+		baseUrl = "http://www.google.de";
 
 		// note due to issue in wordpress the URL does not display properly
 		// above. The URL should end with a forward slash, then quote marks,
 		// then a semi colon.
 
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
 
@@ -53,7 +53,7 @@ public class SeleniumTest {
 
 		browserVersion = caps.getVersion();
 
-		System.out.println("Automated test run. We�re running on " + browserName + " " + browserVersion);
+		System.out.println("Automated test run. Were running on " + browserName + " " + browserVersion);
 
 	}
 
@@ -67,5 +67,13 @@ public class SeleniumTest {
 
 		driver.get(baseUrl);
 
+	}
+	
+	public void register(){
+		
+	}
+
+	public void clickRegister() {
+		driver.findElement(By.linkText("Registrieren")).click();
 	}
 }

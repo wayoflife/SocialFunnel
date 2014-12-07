@@ -1,4 +1,4 @@
-package bddtest;
+package com.socialfunnel.bddtest;
 
 import org.junit.runner.RunWith;
 
@@ -7,10 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(	features = { "src/" },
-					format = { "pretty"},
-					tags = { "@Runme" })
-
-public class Cukerunner {
+@CucumberOptions(	features = { "src/test/resources" }, format = { "pretty"})
+public class RunTests {
 
 }
