@@ -14,6 +14,7 @@ import com.socialfunnel.ui.views.RegisterView;
 import com.socialfunnel.ui.views.UserView;
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.WrappedHttpSession;
@@ -22,6 +23,7 @@ import com.vaadin.ui.UI;
 
 @PreserveOnRefresh
 @Theme("mytheme")
+@Title("SocialFunnel")
 public class MyVaadinUI extends UI {
 	private ApplicationContext applicationContext;
 

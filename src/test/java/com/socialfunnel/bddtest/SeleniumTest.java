@@ -5,17 +5,11 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
-
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import org.openqa.selenium.safari.SafariDriver;
 
 public class SeleniumTest {
@@ -77,18 +71,44 @@ public class SeleniumTest {
 		driver.findElement(By.linkText("Registrieren")).click();
 	}
 	public void enterpassword() {
-		// TODO Auto-generated method stub
-		
+		driver.findElement(By.linkText("Passwort")).sendKeys("test123");
 	}
 
 	public void enterpassword2() {
-		// TODO Auto-generated method stub
-		
+		driver.findElement(By.linkText("Passwort wiederholen")).sendKeys("test123");
 	}
 
 	public void checkbox() {
-		// TODO Auto-generated method stub
-		
+		driver.findElement(By.linkText("Passwort")).click();
+	}
+
+	public void wrongEntry() {
+		driver.findElement(By.linkText("Passwort wiederholen")).sendKeys("ffalscheeeer eintrag");
+	}
+
+	public void onPage(String string) {
+		assertTrue(driver.getCurrentUrl().contains(string));
+	}
+
+	public void errorMessage() {
+		assertTrue(driver.findElement(By.className("v-app mytheme v-overlay-container")) != null);
+	}
+
+	public void notloggedin() {
+		onPage("login");
+		onPage("register");
+	}
+
+	public void chooseNetwork() {
+		driver.findElement(By.className("v-filterselect-button")).click();
+	}
+
+	public void titleAsExpected() {
+		assertTrue(driver.getTitle() == "SocialFunnel");
+	}
+
+	public void networkListCheck() {
+		assertTrue(driver.findElement(By.className("v-slot")) != null);
 	}
 
 }
