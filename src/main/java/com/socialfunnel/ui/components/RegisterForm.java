@@ -57,6 +57,7 @@ public class RegisterForm extends VerticalLayout {
 		txtEmail = new TextField();
 		txtEmail.setCaption("Email");
 		txtEmail.addValidator(new EmailValidator("Keine gültige Email"));
+		txtFirstName.addValidator(new StringLengthValidator("Not empty, max 40 characters", 2, 50, false));
 		txtEmail.setMaxLength(40);
 		
 		txtFirstName = new TextField();

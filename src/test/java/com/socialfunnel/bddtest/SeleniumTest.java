@@ -37,7 +37,7 @@ public class SeleniumTest {
 
 		// driver = new SafariDriver();
 
-		baseUrl = "http://www.google.de";
+		baseUrl = "http://socialfunnel.it.dh-karlsruhe.de:8080/SocialFunnel";
 
 		// note due to issue in wordpress the URL does not display properly
 		// above. The URL should end with a forward slash, then quote marks,
@@ -76,4 +76,19 @@ public class SeleniumTest {
 	public void clickRegister() {
 		driver.findElement(By.linkText("Registrieren")).click();
 	}
+	public void enterpassword() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void enterpassword2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void checkbox() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
