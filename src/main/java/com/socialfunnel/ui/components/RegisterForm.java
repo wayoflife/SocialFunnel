@@ -40,6 +40,7 @@ public class RegisterForm extends VerticalLayout {
 		
 		lblRegistrieren.setStyleName("h1");
 		addComponent(lblRegistrieren);
+		addComponent(txtEmail);
 		addComponent(txtFirstName);
 		addComponent(txtSecondName);
 		addComponent(txtEmail);
@@ -55,7 +56,7 @@ public class RegisterForm extends VerticalLayout {
 
 	private void initFields() {
 		txtEmail = new TextField();
-		txtEmail.setCaption("Email");
+		txtEmail.setCaption("Email (dies wird ihr Login)");
 		txtEmail.addValidator(new EmailValidator("Keine gültige Email"));
 		txtEmail.addValidator(new StringLengthValidator("Not empty, max 40 characters", 2, 50, false));
 		txtEmail.setMaxLength(40);
