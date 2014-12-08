@@ -26,6 +26,7 @@ public class LoginView extends HorizontalLayout implements View {
 		setMargin(true);
 		setSpacing(true);
 		
+		vl_left.setWidth("50%");
 		addComponent(vl_left);
 		addComponent(vl_right);
 		
