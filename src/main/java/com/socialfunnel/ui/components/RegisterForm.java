@@ -52,6 +52,8 @@ public class RegisterForm extends VerticalLayout {
 		addComponent(chbAkzeptieren);
 		addComponent(btnRegistrieren);
 		
+		chbAkzeptieren.setId("checkbox");
+		
 	}
 
 	private void initFields() {
@@ -60,28 +62,33 @@ public class RegisterForm extends VerticalLayout {
 		txtEmail.addValidator(new EmailValidator("Keine gültige Email"));
 		txtEmail.addValidator(new StringLengthValidator("Not empty, max 40 characters", 2, 50, false));
 		txtEmail.setMaxLength(40);
+		txtEmail.setId("txtEmail");
 		
 		txtFirstName = new TextField();
 		txtFirstName.setCaption("Vorname");
 		txtFirstName.addValidator(new StringLengthValidator("Atleast 2, max 30 characters", 2, 30, false));
 		txtFirstName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
 		txtFirstName.setMaxLength(30);
+		txtFirstName.setId("txtFirstName");
 		
 		txtSecondName = new TextField();
 		txtSecondName.setCaption("Nachname");
 		txtSecondName.addValidator(new StringLengthValidator("Atleast 2, max 30 characters", 2, 30, false));
 		txtSecondName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
 		txtSecondName.setMaxLength(30);
+		txtSecondName.setId("txtSecondName");
 		
 		txtPassword = new PasswordField();
 		txtPassword.setCaption("Passwort");
 		txtPassword.addValidator(new StringLengthValidator("Passwortlänge zwischen 6 und 20 Zeichen",
 				6, 20, false));
 		txtPassword.setMaxLength(20);
+		txtPassword.setId("txtPassword");
 		
 		txtPassword2 = new PasswordField();
 		txtPassword2.setCaption("Passwort wiederholen");
 		txtPassword2.setMaxLength(20);
+		txtPassword2.setId("txtPassword2");
 	}
 
 	private void initButtons() {
@@ -110,6 +117,7 @@ public class RegisterForm extends VerticalLayout {
 			}
         });		
 		btnRegistrieren.setClickShortcut(KeyCode.ENTER, null);
+		btnRegistrieren.setId("btnregister");
 	}
 
 	protected boolean registerPossible() {

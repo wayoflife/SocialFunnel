@@ -68,22 +68,22 @@ public class SeleniumTest {
 	}
 
 	public void clickRegister() {
-		driver.findElement(By.linkText("Registrieren")).click();
+		driver.findElement(By.id("btnRegistrieren")).click();
 	}
 	public void enterpassword() {
-		driver.findElement(By.linkText("Passwort")).sendKeys("test123");
+		driver.findElement(By.id("txtPasswort")).sendKeys("test123");
 	}
 
 	public void enterpassword2() {
-		driver.findElement(By.linkText("Passwort wiederholen")).sendKeys("test123");
+		driver.findElement(By.id("txtPasswort2")).sendKeys("test123");
 	}
 
 	public void checkbox() {
-		driver.findElement(By.linkText("Passwort")).click();
+		driver.findElement(By.id("checkbox")).click();
 	}
 
 	public void wrongEntry() {
-		driver.findElement(By.linkText("Passwort wiederholen")).sendKeys("ffalscheeeer eintrag");
+		driver.findElement(By.id("txtPasswort2")).sendKeys("falschesPasswort");
 	}
 
 	public void onPage(String string) {
@@ -100,11 +100,11 @@ public class SeleniumTest {
 	}
 
 	public void chooseNetwork() {
-		driver.findElement(By.className("v-filterselect-button")).click();
+		driver.findElement(By.id("listNetwork")).click();
 	}
 
 	public void titleAsExpected() {
-		assertTrue(driver.getTitle() == "SocialFunnel");
+		assertTrue(driver.getTitle().equalsIgnoreCase("SocialFunnel"));
 	}
 
 	public void networkListCheck() {

@@ -39,6 +39,7 @@ public NetworkChangeForm() {
 	
 	cbbNetzwerke.addItem("Facebook");
 	cbbNetzwerke.addItem("Twitter");
+	cbbNetzwerke.setId("listNetwork");
 	
 	btnDelete.addClickListener(new ClickListener() {
 		
