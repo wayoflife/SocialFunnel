@@ -37,6 +37,7 @@ public class LoginView extends HorizontalLayout implements View {
 				UI.getCurrent().getNavigator().navigateTo("register");
 			}
 		});
+		btnRegister.setId("btnRegistrieren");
 		
 		vl_left.addComponent(new LoginForm());
 		vl_left.addComponent(lblKeinAccount);
