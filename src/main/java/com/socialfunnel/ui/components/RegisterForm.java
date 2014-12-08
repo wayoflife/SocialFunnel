@@ -90,6 +90,8 @@ public class RegisterForm extends VerticalLayout {
 		txtPassword2.setCaption("Passwort wiederholen");
 		txtPassword2.setMaxLength(20);
 		txtPassword2.setId("txtPassword2");
+		
+		btnRegistrieren.setId("btnRegistrieren");
 	}
 
 	private void initButtons() {
