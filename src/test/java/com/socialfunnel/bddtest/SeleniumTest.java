@@ -105,6 +105,7 @@ public class SeleniumTest {
 
 	public void titleAsExpected() {
 		assertTrue(driver.getTitle().equalsIgnoreCase("SocialFunnel"));
+		
 	}
 
 	public void networkListCheck() {

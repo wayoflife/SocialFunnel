@@ -39,6 +39,7 @@ public class RegisterForm extends VerticalLayout {
 		initFields();
 		
 		lblRegistrieren.setStyleName("h1");
+		
 		addComponent(lblRegistrieren);
 		addComponent(txtEmail);
 		addComponent(txtFirstName);

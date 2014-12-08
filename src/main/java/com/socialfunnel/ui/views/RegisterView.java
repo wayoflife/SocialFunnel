@@ -19,6 +19,7 @@ public class RegisterView extends HorizontalLayout implements View {
 		setMargin(true);
 		setSpacing(true);
 		
+		
 		addComponent(vl_left);
 		addComponent(vl_right);
 		
