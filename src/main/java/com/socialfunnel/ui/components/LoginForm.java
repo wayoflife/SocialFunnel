@@ -23,6 +23,11 @@ public class LoginForm extends VerticalLayout {
 	private Link lnkPasswortVergessen = new Link("Passwort vergessen?", new ExternalResource(""));
 
 	public LoginForm() {
+		txtLogin.setId("txtEmail");
+		txtPassword.setId("txtPassword");
+		btnLogin.setId("btnLogin");
+		lnkPasswortVergessen.setId("lnkPasswortVergessen");
+		
 		lblAnmelden.setStyleName("h1");
 		addComponent(lblAnmelden);
 		addComponent(txtLogin);
