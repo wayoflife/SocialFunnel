@@ -18,7 +18,6 @@ public class NetworkChangeView extends VerticalLayout implements View {
 	NetworkChangeForm changeform = new NetworkChangeForm();
 
 	public NetworkChangeView() {
-		// TODO Auto-generated constructor stub
 		// addComponent(headline);
 		addComponent(menubar);
 		addComponent(btnNewNetwork);
@@ -29,7 +28,16 @@ public class NetworkChangeView extends VerticalLayout implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				addComponent(new NetworkChangeForm());
+				final NetworkChangeForm ncf = new NetworkChangeForm();
+				addComponent(ncf);
+				Button remove = new Button("Netzwerk entfernen", new Button.ClickListener() {
+					
+					@Override
+					public void buttonClick(ClickEvent event) {
+						NetworkChangeView.this.removeComponent(ncf);
+					}
+				});
+				addComponent(remove);
 			}
 		});
 	}
