@@ -18,6 +18,11 @@ public class NetworkChangeForm extends VerticalLayout {
 	private HorizontalLayout hl2 = new HorizontalLayout();
 
 	public NetworkChangeForm() {
+		cbbNetzwerke.setId("txtNetzwerk");
+		txtLogin.setId("txtEmail");
+		pwdPasswort.setId("txtPassword");
+		chbAktiv.setId("checkbox");
+		
 		hl1.addComponent(cbbNetzwerke);
 		hl1.addComponent(txtLogin);
 		hl1.addComponent(pwdPasswort);

@@ -40,6 +40,7 @@ public class NetworkChangeView extends VerticalLayout implements View {
 				addComponent(remove);
 			}
 		});
+		btnNewNetwork.setId("NeuesNetzwerk");
 	}
 
 	@Override
