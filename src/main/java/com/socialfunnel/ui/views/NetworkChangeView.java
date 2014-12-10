@@ -15,13 +15,11 @@ public class NetworkChangeView extends VerticalLayout implements View {
 	private Headline headline = new Headline();
 	private SC_Menubar menubar = new SC_Menubar();
 	private Button btnNewNetwork = new Button("+ neues Netzwerk");
-	NetworkChangeForm changeform = new NetworkChangeForm();
 
 	public NetworkChangeView() {
 		// addComponent(headline);
 		addComponent(menubar);
 		addComponent(btnNewNetwork);
-		addComponent(changeform);
 
 		btnNewNetwork.addClickListener(new ClickListener() {
 
@@ -30,11 +28,13 @@ public class NetworkChangeView extends VerticalLayout implements View {
 				// TODO Auto-generated method stub
 				final NetworkChangeForm ncf = new NetworkChangeForm();
 				addComponent(ncf);
-				Button remove = new Button("Netzwerk entfernen", new Button.ClickListener() {
-					
+				final Button remove = new Button("Netzwerk entfernen");
+				remove.addClickListener(new Button.ClickListener() {
+
 					@Override
 					public void buttonClick(ClickEvent event) {
 						NetworkChangeView.this.removeComponent(ncf);
+						NetworkChangeView.this.removeComponent(remove);
 					}
 				});
 				addComponent(remove);
