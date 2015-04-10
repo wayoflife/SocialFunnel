@@ -4,6 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.socialfunnel.ui.views.LoginView;
@@ -20,6 +21,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.WrappedHttpSession;
 import com.vaadin.server.WrappedSession;
 import com.vaadin.ui.UI;
+
 
 @PreserveOnRefresh
 @Theme("mytheme")

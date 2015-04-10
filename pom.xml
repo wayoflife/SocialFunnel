@@ -2,17 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ladasi</groupId>
+	<groupId>de.dhbw.se</groupId>
 	<artifactId>SocialFunnel</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>Vaadin Web Application</name>
+	<name>SocialFunnel</name>
 
 	<properties>
+		<vaadin.version>7.4.2</vaadin.version>
+		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
+
+		<project.source.version>1.7</project.source.version>
+		<project.target.version>1.7</project.target.version>
+		<project.encoding>UTF-8</project.encoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<vaadin.version>7.0.7</vaadin.version>
-		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+
 		<spring.version>4.1.2.RELEASE</spring.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
 	</properties>
@@ -66,7 +72,15 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	
+	
 	<dependencies>
+			<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-facebook</artifactId>
@@ -77,20 +91,16 @@
 			<artifactId>vaadin-server</artifactId>
 			<version>${vaadin.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiler</artifactId>
-			<version>${vaadin.version}</version>
-		</dependency>
-		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory). 
-			For widgetset compilation, vaadin-client-compiler is automatically added 
-			on the compilation classpath by vaadin-maven-plugin so normally there is 
-			no need for an explicit dependency. -->
 		<!-- <dependency> <groupId>com.vaadin</groupId> <artifactId>vaadin-client-compiler</artifactId> 
-			<version>${vaadin.version}</version> <scope>provided</scope> </dependency> -->
+			<version>${vaadin.version}</version> </dependency> -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client</artifactId>
+			<artifactId>vaadin-spring</artifactId>
+			<version>1.0.0.beta1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client-compiled</artifactId>
 			<version>${vaadin.version}</version>
 			<scope>provided</scope>
 		</dependency>
