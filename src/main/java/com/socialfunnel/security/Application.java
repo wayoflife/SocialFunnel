@@ -18,7 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
-import org.vaadin.spring.sample.security.account.JdbcAccountRepository;
 import org.vaadin.spring.servlet.SpringAwareVaadinServlet;
 
 @Configuration
@@ -34,32 +33,6 @@ public class Application  {
 	@Bean
 	public SpringAwareVaadinServlet springAwareVaadinServlet() {
 		return new CustomVaadinServlet();
-	}
-	
-	@Bean
-	public FilterRegistrationBean hiddenHttpMethodFilter() {
-		HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
-		FilterRegistrationBean registrationBean = new FilterRegistrationBean();								
-		registrationBean.setFilter(hiddenHttpMethodFilter);					
-		return registrationBean;		
-	}
-	
-	
-	@Bean(destroyMethod = "shutdown")
-	public DataSource dataSource() {
-		EmbeddedDatabaseFactory factory = new EmbeddedDatabaseFactory();
-		factory.setDatabaseName("spring-social-showcase");
-		factory.setDatabaseType(EmbeddedDatabaseType.H2);
-		factory.setDatabasePopulator(databasePopulator());
-		return factory.getDatabase();
-	}
-	
-	private DatabasePopulator databasePopulator() {
-		ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-		populator.addScript(new ClassPathResource("JdbcUsersConnectionRepository.sql", JdbcUsersConnectionRepository.class));
-		populator.addScript(new ClassPathResource("Account.sql", JdbcAccountRepository.class));
-		populator.addScript(new ClassPathResource("data.sql", JdbcAccountRepository.class));
-		return populator;
 	}
 	
 	/**
