@@ -20,16 +20,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/cucumber-core-1.1.8.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/cucumber-html-0.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/cucumber-java-1.1.8.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/cucumber-junit-1.1.8.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/cucumber-jvm-deps-1.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/gherkin-2.12.2.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/gherkin-jvm-deps-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/jchronic-0.2.6.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/junit-4.10.jar"/>
-	<classpathentry kind="lib" path="C:/dev/cucumber_selenium_jars/selenium-server-standalone-2.43.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
