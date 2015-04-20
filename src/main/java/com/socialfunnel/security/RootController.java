@@ -9,6 +9,7 @@ public class RootController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String redirectToUi() {
+		System.out.println("controller erfolgreich gestartet");
 		return "redirect:/ui";
 	}
 
