@@ -7,10 +7,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import softwarengineering.SocialFunnel.MyVaadinUI;
-
-import com.socialfunnel.auth.AuthManager;
 import com.socialfunnel.hibernate.PWCrypt;
+import com.socialfunnel.security.AuthManager;
 import com.socialfunnel.ui.components.LoginForm;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Notification;
@@ -32,7 +30,7 @@ public class LoginFormListener implements Button.ClickListener {
 					username, password);
 			Authentication result = authManager.authenticate(request);
 			SecurityContextHolder.getContext().setAuthentication(result);
-			((MyVaadinUI) UI.getCurrent()).getNavigator().navigateTo("user");
+			//navigieren auf user
 		} catch (AuthenticationException e) {
 			Notification.show("Authentication failed: " + e.getMessage());
 		} catch (Exception e) {
