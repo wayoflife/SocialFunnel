@@ -1,5 +1,7 @@
 package com.socialfunnel.todo;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -9,10 +11,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import com.socialfunnel.service.UserService;
-
-import java.util.Collection;
 
 @Component
 public class AuthManager implements AuthenticationManager {

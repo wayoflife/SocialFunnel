@@ -1,7 +1,5 @@
-package com.socialfunnel.ui.views;
+package de.dhbw.socialfunnel.view.component;
 
-import com.socialfunnel.ui.components.LoginForm;
-import com.socialfunnel.ui.components.Logo;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -12,6 +10,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import de.dhbw.socialfunnel.view.RegisterView;
 
 public class LoginView extends HorizontalLayout implements View {
 	

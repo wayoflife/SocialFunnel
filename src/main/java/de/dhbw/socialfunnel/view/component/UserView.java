@@ -1,4 +1,4 @@
-package com.socialfunnel.ui.views;
+package de.dhbw.socialfunnel.view.component;
 
 import java.util.Collection;
 
@@ -7,8 +7,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.socialfunnel.ui.LogoutListener;
-import com.socialfunnel.ui.components.SC_Menubar;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
