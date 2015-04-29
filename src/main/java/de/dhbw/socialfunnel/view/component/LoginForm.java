@@ -39,6 +39,6 @@ public class LoginForm extends VerticalLayout {
 		
 		//TODO einen Loginform listener hinzufügen um das login abzuarbeiten
 		//Seite sollte umgebaut werden, ist so ziemlicher bullshit
-		btnLogin.addClickListener(null);
+		//btnLogin.addClickListener(null);
 	}
 }

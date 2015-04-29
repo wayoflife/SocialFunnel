@@ -1,7 +1,10 @@
 package de.dhbw.socialfunnel.view;
 
+import javax.annotation.PostConstruct;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -14,7 +17,10 @@ import com.vaadin.ui.VerticalLayout;
 import de.dhbw.socialfunnel.view.component.LoginForm;
 import de.dhbw.socialfunnel.view.component.Logo;
 
+@SpringView(name = LoginView.VIEW_NAME)
 public class LoginView extends HorizontalLayout implements View {
+	
+	public final static String VIEW_NAME = "";
 	
 	private Button btnRegister = new Button("Registrieren");
 	private Label lblKeinAccount = new Label("Noch keinen Account?");
@@ -22,7 +28,8 @@ public class LoginView extends HorizontalLayout implements View {
 	private VerticalLayout vl_left = new VerticalLayout();
 	private VerticalLayout vl_right = new VerticalLayout();
 	
-	public LoginView() {
+	@PostConstruct
+	void init() {
 		setSizeFull();
 		setMargin(true);
 		setSpacing(true);
@@ -48,8 +55,6 @@ public class LoginView extends HorizontalLayout implements View {
 	
 	@Override
 	public void enter(ViewChangeEvent event) {
-		if(event.getOldView() instanceof RegisterView){
-			Notification.show("Registrierung erfolgreich, du kannst dich jetzt einloggen");
-		}
+		//
 	}
 };
