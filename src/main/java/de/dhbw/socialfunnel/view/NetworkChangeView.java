@@ -2,6 +2,7 @@ package de.dhbw.socialfunnel.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -11,8 +12,11 @@ import de.dhbw.socialfunnel.view.component.Headline;
 import de.dhbw.socialfunnel.view.component.NetworkChangeForm;
 import de.dhbw.socialfunnel.view.component.SC_Menubar;
 
+@SpringView(name = NetworkChangeView.VIEW_NAME)
 public class NetworkChangeView extends VerticalLayout implements View {
 
+	public final static String VIEW_NAME = "netze";
+	
 	private Headline headline = new Headline();
 	private SC_Menubar menubar = new SC_Menubar();
 	private Button btnNewNetwork = new Button("+ neues Netzwerk");

@@ -48,9 +48,9 @@ public class Headline extends HorizontalLayout {
 		addComponent(vl);
 		
 		//TODO die clicklistener implementieren
-		btnStartseite.addClickListener(null);
-		btnNetzwerke.addClickListener(null);
-		btnNeuerPost.addClickListener(null);
-		btnAbmelden.addClickListener(null);
+//		btnStartseite.addClickListener(null);
+//		btnNetzwerke.addClickListener(null);
+//		btnNeuerPost.addClickListener(null);
+//		btnAbmelden.addClickListener(null);
 	}
 }

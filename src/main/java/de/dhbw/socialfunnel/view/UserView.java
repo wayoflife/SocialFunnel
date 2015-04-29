@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
+import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
@@ -18,7 +19,10 @@ import com.vaadin.ui.VerticalLayout;
 import de.dhbw.socialfunnel.view.component.LogoutListener;
 import de.dhbw.socialfunnel.view.component.SC_Menubar;
 
+@SpringView(name = UserView.VIEW_NAME)
 public class UserView extends VerticalLayout implements View {
+	
+	public final static String VIEW_NAME = "user";
 	
 	private SC_Menubar menubar = new SC_Menubar();
 	

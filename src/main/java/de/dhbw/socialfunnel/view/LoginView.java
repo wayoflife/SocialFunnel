@@ -2,9 +2,13 @@ package de.dhbw.socialfunnel.view;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.spring.access.ViewAccessControl;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -17,8 +21,9 @@ import com.vaadin.ui.VerticalLayout;
 import de.dhbw.socialfunnel.view.component.LoginForm;
 import de.dhbw.socialfunnel.view.component.Logo;
 
+@UIScope
 @SpringView(name = LoginView.VIEW_NAME)
-public class LoginView extends HorizontalLayout implements View {
+public class LoginView extends HorizontalLayout implements View, ViewAccessControl {
 	
 	public final static String VIEW_NAME = "";
 	
@@ -27,6 +32,12 @@ public class LoginView extends HorizontalLayout implements View {
 	
 	private VerticalLayout vl_left = new VerticalLayout();
 	private VerticalLayout vl_right = new VerticalLayout();
+	
+	@Autowired
+	private LoginForm loginForm;
+	
+	@Autowired
+	private Logo logo;
 	
 	@PostConstruct
 	void init() {
@@ -47,14 +58,20 @@ public class LoginView extends HorizontalLayout implements View {
 		});
 		btnRegister.setId("btnRegistrieren");
 		
-		vl_left.addComponent(new LoginForm());
+		vl_left.addComponent(loginForm);
 		vl_left.addComponent(lblKeinAccount);
 		vl_left.addComponent(btnRegister);
-		vl_right.addComponent(new Logo());
+		vl_right.addComponent(logo);
 	}
 	
 	@Override
 	public void enter(ViewChangeEvent event) {
 		//
+	}
+
+	@Override
+	public boolean isAccessGranted(UI ui, String beanName) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 };

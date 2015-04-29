@@ -2,6 +2,7 @@ package de.dhbw.socialfunnel.view;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.HorizontalLayout;
@@ -11,7 +12,10 @@ import com.vaadin.ui.VerticalLayout;
 import de.dhbw.socialfunnel.view.component.Headline;
 import de.dhbw.socialfunnel.view.component.SC_Menubar;
 
+@SpringView(name = NewPostView.VIEW_NAME)
 public class NewPostView extends VerticalLayout implements View{
+	
+	public final static String VIEW_NAME = "post";
 	
 	private Headline headline = new Headline();
 	private SC_Menubar menubar = new SC_Menubar();
