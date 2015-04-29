@@ -1,4 +1,4 @@
-package com.socialfunnel.todo;
+package de.dhbw.socialfunnel.todo;
 
 public class User {
 	private String name;

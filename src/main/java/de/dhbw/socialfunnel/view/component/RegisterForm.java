@@ -3,7 +3,6 @@ package de.dhbw.socialfunnel.view.component;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
-import com.socialfunnel.todo.DBHelper;
 import com.vaadin.data.Property.ReadOnlyException;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.data.validator.RegexpValidator;
@@ -20,6 +19,8 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+
+import de.dhbw.socialfunnel.todo.DBHelper;
 
 public class RegisterForm extends VerticalLayout {
 	private static final long serialVersionUID = 1L;

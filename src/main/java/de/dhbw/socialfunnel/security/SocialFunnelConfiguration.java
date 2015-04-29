@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.socialfunnel.todo.AuthManager;
-import com.socialfunnel.todo.UserService;
 import com.vaadin.spring.annotation.EnableVaadin;
 
+import de.dhbw.socialfunnel.todo.AuthManager;
+import de.dhbw.socialfunnel.todo.UserService;
 import de.dhbw.socialfunnel.view.component.LoginFormListener;
 import de.dhbw.socialfunnel.view.component.LogoutListener;
 import de.dhbw.socialfunnel.view.component.RegisterFormListener;
