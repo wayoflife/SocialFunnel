@@ -5,7 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
- 	<import resource="database-spring.xml" />
  
     <bean name="/welcome.htm" 
 	class="de.dhbw.socialfunnel.security.RootController" />
