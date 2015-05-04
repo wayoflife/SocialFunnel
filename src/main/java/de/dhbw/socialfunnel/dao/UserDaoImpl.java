@@ -4,15 +4,15 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import de.dhbw.socialfunnel.model.User;
 
 @Transactional
 @Component
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao{
 	
 	@PersistenceContext
 	private EntityManager em;
