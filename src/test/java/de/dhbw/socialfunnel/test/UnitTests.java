@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import de.dhbw.socialfunnel.todo.PWCrypt;
 
-public class Unittests {
+public class UnitTests {
 	
 	@Test
 	public void testEncryption() throws Exception {
