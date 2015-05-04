@@ -14,7 +14,7 @@ import de.dhbw.socialfunnel.view.component.RegisterFormListener;
 
 @Configuration
 @EnableVaadin
-@ComponentScan(basePackages = {"de.dhbw.socialfunnel.security", "de.dhbw.socialfunnel.view"})
+@ComponentScan(basePackages = {"de.dhbw.socialfunnel.security", "de.dhbw.socialfunnel.view", "de.dhbw.socialfunnel.dao"})
 public class SocialFunnelConfiguration {
 	
 	@Bean
