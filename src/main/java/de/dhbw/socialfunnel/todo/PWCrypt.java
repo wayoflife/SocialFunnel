@@ -54,10 +54,26 @@ public class PWCrypt implements Serializable {
 			fis.read(encodedKey);
 			fis.close();
 			return new SecretKeySpec(encodedKey, verfahren);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		} catch (FileNotFoundException | NullPointerException e) {
+			return alternative();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private SecretKey alternative(){
+		try{
+			File key = new File("src/main/webapp/WEB-INF/lib/key.dat");
+			FileInputStream fis = new FileInputStream(key);
+			byte[] encodedKey = new byte[(int) key.length()];
+			fis.read(encodedKey);
+			fis.close();
+			return new SecretKeySpec(encodedKey, verfahren);
+		}catch (FileNotFoundException e){
+			
+		} catch (IOException e){
+			
 		}
 		return null;
 	}

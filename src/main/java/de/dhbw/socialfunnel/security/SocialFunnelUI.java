@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.navigator.Navigator;
-import com.vaadin.navigator.View;
-import com.vaadin.navigator.ViewProvider;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.navigator.SpringViewProvider;
@@ -19,7 +17,6 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
-import de.dhbw.socialfunnel.view.AccessDeniedView;
 import de.dhbw.socialfunnel.view.ErrorView;
 import de.dhbw.socialfunnel.view.LoginView;
 import de.dhbw.socialfunnel.view.MainpageView;
