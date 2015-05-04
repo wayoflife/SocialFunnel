@@ -1,18 +1,10 @@
 package de.dhbw.socialfunnel.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
 
-import de.dhbw.socialfunnel.dao.NetworksDaoImpl;
-import de.dhbw.socialfunnel.dao.UserDaoImpl;
-import de.dhbw.socialfunnel.model.Networks;
-import de.dhbw.socialfunnel.model.User;
 import de.dhbw.socialfunnel.todo.PWCrypt;
 
 public class UnitTests {
