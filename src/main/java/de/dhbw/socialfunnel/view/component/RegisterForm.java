@@ -3,6 +3,8 @@ package de.dhbw.socialfunnel.view.component;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.vaadin.data.Property.ReadOnlyException;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.data.validator.RegexpValidator;
@@ -11,6 +13,7 @@ import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
+import com.vaadin.ui.AbstractTextField.TextChangeEventMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CheckBox;
@@ -22,12 +25,18 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import de.dhbw.socialfunnel.dao.UserDaoImpl;
+import de.dhbw.socialfunnel.model.User;
 import de.dhbw.socialfunnel.todo.DBHelper;
 
 @UIScope
 @SpringComponent
 public class RegisterForm extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
+	
+	@Autowired
+	private UserDaoImpl userDao;
+	
 	private TextField txtFirstName;
 	private TextField txtSecondName;
 	private TextField txtEmail;
@@ -70,6 +79,7 @@ public class RegisterForm extends VerticalLayout {
 		txtEmail.addValidator(new StringLengthValidator("Not empty, max 40 characters", 2, 50, false));
 		txtEmail.setMaxLength(40);
 		txtEmail.setId("txtEmail");
+		txtEmail.setTextChangeEventMode(TextChangeEventMode.LAZY);
 		
 		txtFirstName = new TextField();
 		txtFirstName.setCaption("Vorname");
@@ -77,6 +87,7 @@ public class RegisterForm extends VerticalLayout {
 		txtFirstName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
 		txtFirstName.setMaxLength(30);
 		txtFirstName.setId("txtFirstName");
+		txtFirstName.setTextChangeEventMode(TextChangeEventMode.LAZY);
 		
 		txtSecondName = new TextField();
 		txtSecondName.setCaption("Nachname");
@@ -84,6 +95,7 @@ public class RegisterForm extends VerticalLayout {
 		txtSecondName.addValidator(new RegexpValidator("\\p{Alpha}*", "Nur Zeichen des Alphabets"));
 		txtSecondName.setMaxLength(30);
 		txtSecondName.setId("txtSecondName");
+		txtSecondName.setTextChangeEventMode(TextChangeEventMode.LAZY);
 		
 		txtPassword = new PasswordField();
 		txtPassword.setCaption("Passwort");
@@ -91,11 +103,13 @@ public class RegisterForm extends VerticalLayout {
 				6, 20, false));
 		txtPassword.setMaxLength(20);
 		txtPassword.setId("txtPassword");
+		txtPassword.setTextChangeEventMode(TextChangeEventMode.LAZY);
 		
 		txtPassword2 = new PasswordField();
 		txtPassword2.setCaption("Passwort wiederholen");
 		txtPassword2.setMaxLength(20);
 		txtPassword2.setId("txtPassword2");
+		txtPassword2.setTextChangeEventMode(TextChangeEventMode.LAZY);
 	}
 
 	private void initButtons() {
@@ -107,17 +121,16 @@ public class RegisterForm extends VerticalLayout {
 			public void buttonClick(ClickEvent event) {
 				if(registerPossible()){
 					try {
-						new DBHelper().addNewUser(txtEmail.getValue(), txtPassword.getValue());
-						getUI().getNavigator().navigateTo("login");
-					} catch (SQLException e) {
-						Notification.show("Cannot connect to Database! Try again later.",
-								Notification.Type.WARNING_MESSAGE);
-						e.printStackTrace();
-					} catch (FileNotFoundException e) {
-						e.printStackTrace();
+						User user = new User(txtFirstName.getValue()+txtSecondName.getValue(), 
+											txtEmail.getValue(), 
+											txtPassword.getValue(), 
+											txtGeburtstag.getValue().toString());
+						userDao.save(user);
 					} catch (ReadOnlyException e) {
 						e.printStackTrace();
 					} catch (Exception e) {
+						Notification.show("Cannot connect to Database! Try again later.",
+								Notification.Type.WARNING_MESSAGE);
 						e.printStackTrace();
 					}
 				}
@@ -132,19 +145,19 @@ public class RegisterForm extends VerticalLayout {
 			Notification.show("One or more fields contain invalid values! Fix it!", Notification.Type.WARNING_MESSAGE);
 			return false;
 		}
-		try {
-			if(!new DBHelper().isMailAvailable(txtEmail.getValue())){
-				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
-				return false;
-			}
-		} catch (SQLException e) {
-			Notification.show("Cannot validate email! Try again later.", Notification.Type.WARNING_MESSAGE);
-			return false;
-		}
 		if(!txtPassword.getValue().equals(txtPassword2.getValue())){
 			Notification.show("Passwords do not match!", Notification.Type.WARNING_MESSAGE);
 			return false;
 		}
+		//auf existenz überprüfen
+		
+//		for(User u : userDao.getAll()){
+//			if(txtEmail.getValue() == u.getEmail()) {
+//				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
+//				return false;
+//			}
+//		}
+		
 		return true;
 	}
 }
