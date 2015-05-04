@@ -9,6 +9,8 @@ import com.vaadin.data.validator.RegexpValidator;
 import com.vaadin.data.validator.StringLengthValidator;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.ExternalResource;
+import com.vaadin.spring.annotation.SpringComponent;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CheckBox;
@@ -22,6 +24,8 @@ import com.vaadin.ui.VerticalLayout;
 
 import de.dhbw.socialfunnel.todo.DBHelper;
 
+@UIScope
+@SpringComponent
 public class RegisterForm extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
 	private TextField txtFirstName;

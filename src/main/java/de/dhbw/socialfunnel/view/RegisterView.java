@@ -1,5 +1,9 @@
 package de.dhbw.socialfunnel.view;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
@@ -16,20 +20,24 @@ public class RegisterView extends HorizontalLayout implements View {
 	
 	private VerticalLayout vl_left = new VerticalLayout();
 	private VerticalLayout vl_right = new VerticalLayout();
+
+	@Autowired
+	private RegisterForm registerForm;
+
+	@Autowired
+	private Logo logo;
 	
-    public RegisterView() {
-    	super();
-		
+	@PostConstruct
+    void init() {
 		setSizeFull();
 		setMargin(true);
 		setSpacing(true);
 		
-		
 		addComponent(vl_left);
 		addComponent(vl_right);
 		
-		vl_left.addComponent(new RegisterForm());
-		vl_right.addComponent(new Logo());
+		vl_left.addComponent(registerForm);
+		vl_right.addComponent(logo);
 	}
 
 	@Override

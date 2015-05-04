@@ -2,6 +2,7 @@ package de.dhbw.socialfunnel.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewProvider;
@@ -22,9 +23,11 @@ import de.dhbw.socialfunnel.view.AccessDeniedView;
 import de.dhbw.socialfunnel.view.ErrorView;
 import de.dhbw.socialfunnel.view.LoginView;
 import de.dhbw.socialfunnel.view.MainpageView;
+import de.dhbw.socialfunnel.view.NetworkView;
 import de.dhbw.socialfunnel.view.RegisterView;
 import de.dhbw.socialfunnel.view.UserView;
 
+@PreserveOnRefresh
 @SpringUI
 public class SocialFunnelUI extends UI {
 	
@@ -50,6 +53,7 @@ public class SocialFunnelUI extends UI {
         navigationBar.addComponent(createNavigationButton("View Main", MainpageView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View User", UserView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View error", ErrorView.VIEW_NAME));
+        navigationBar.addComponent(createNavigationButton("View facebook", NetworkView.VIEW_NAME));
         root.addComponent(navigationBar);
         
         Button button = new Button("Click Me");

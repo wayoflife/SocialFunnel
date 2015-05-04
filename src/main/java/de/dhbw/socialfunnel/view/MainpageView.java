@@ -1,5 +1,7 @@
 package de.dhbw.socialfunnel.view;
 
+import javax.annotation.PostConstruct;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
@@ -17,18 +19,14 @@ public class MainpageView extends VerticalLayout implements View{
 	private SC_Menubar menubar = new SC_Menubar();
 	private VerticalLayout vlLeft = new VerticalLayout();
 	
-	
-	public MainpageView() {
-
+	@PostConstruct
+	void init() {
 //		addComponent(headline);
 		addComponent(menubar);
-	
 	}
-
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
 		
 	}
 }

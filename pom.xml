@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>SocialFunnel</name>
-
+	
 	<properties>
 		<vaadin.version>7.4.2</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
@@ -111,6 +111,13 @@
 			<version>${spring.security.version}</version>
 		</dependency>
 
+		<!-- Spring social stuff -->
+
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-facebook</artifactId>
+			<version>1.1.1.RELEASE</version>
+		</dependency>
 
 		<!-- Servlet and other stuff -->
 		<dependency>

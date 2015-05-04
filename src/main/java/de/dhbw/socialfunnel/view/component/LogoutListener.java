@@ -1,10 +1,9 @@
 package de.dhbw.socialfunnel.view.component;
 
-import org.springframework.stereotype.Component;
-
+import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Button;
 
-@Component
+@SpringComponent
 public class LogoutListener implements Button.ClickListener {
 	
 	@Override

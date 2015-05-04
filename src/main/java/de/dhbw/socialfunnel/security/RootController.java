@@ -18,5 +18,4 @@ public class RootController {
 		System.out.println("controller erfolgreich gestartet von index.html");
 		return "redirect:/ui";
 	}
-
 }

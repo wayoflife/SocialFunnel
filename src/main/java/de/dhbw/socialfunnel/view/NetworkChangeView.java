@@ -1,5 +1,7 @@
 package de.dhbw.socialfunnel.view;
 
+import javax.annotation.PostConstruct;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
@@ -21,7 +23,8 @@ public class NetworkChangeView extends VerticalLayout implements View {
 	private SC_Menubar menubar = new SC_Menubar();
 	private Button btnNewNetwork = new Button("+ neues Netzwerk");
 
-	public NetworkChangeView() {
+	@PostConstruct
+	void init() {
 		// addComponent(headline);
 		addComponent(menubar);
 		addComponent(btnNewNetwork);
@@ -50,7 +53,6 @@ public class NetworkChangeView extends VerticalLayout implements View {
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
 
 	}
 }
