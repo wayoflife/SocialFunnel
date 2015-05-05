@@ -1,4 +1,4 @@
-package de.dhbw.socialfunnel.todo;
+package de.dhbw.socialfunnel.security;
 
 import java.util.Collection;
 
@@ -22,6 +22,7 @@ public class AuthManager implements AuthenticationManager {
 		
 		String username = (String) auth.getPrincipal();
 		String password = (String) auth.getCredentials();
+		System.out.println(username + " " + password);
 		UserDetails user = userService.loadUserByUsername(username);
 		if (user != null && user.getPassword().equals(password)) {
 			Collection<? extends GrantedAuthority> authorities = user

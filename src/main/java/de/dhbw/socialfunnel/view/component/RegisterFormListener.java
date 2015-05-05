@@ -5,10 +5,11 @@ import org.springframework.stereotype.Component;
 
 import com.vaadin.ui.Button;
 
-import de.dhbw.socialfunnel.todo.AuthManager;
+import de.dhbw.socialfunnel.security.AuthManager;
 
 @Component
 public class RegisterFormListener implements Button.ClickListener {
+	
 	@Autowired
 	private AuthManager authManager;
 	
