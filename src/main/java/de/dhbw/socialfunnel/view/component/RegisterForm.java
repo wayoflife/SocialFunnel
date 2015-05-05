@@ -147,12 +147,12 @@ public class RegisterForm extends VerticalLayout {
 		}
 		//auf existenz überprüfen
 		
-//		for(User u : userDao.getAll()){
-//			if(txtEmail.getValue() == u.getEmail()) {
-//				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
-//				return false;
-//			}
-//		}
+		
+			if(txtEmail.getValue() == userDao.findByEmail(txtEmail.getValue()).getEmail()) {
+				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
+				return false;
+			}
+		
 		
 		return true;
 	}
