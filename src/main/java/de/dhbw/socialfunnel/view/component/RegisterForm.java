@@ -117,7 +117,7 @@ public class RegisterForm extends VerticalLayout {
 			public void buttonClick(ClickEvent event) {
 				if(registerPossible()){
 					try {
-						User user = new User(txtFirstName.getValue()+txtSecondName.getValue(), 
+						User user = new User(txtFirstName.getValue()+" "+txtSecondName.getValue(), 
 											txtEmail.getValue(), 
 											txtPassword.getValue(), 
 											txtGeburtstag.getValue().toString());
@@ -146,13 +146,10 @@ public class RegisterForm extends VerticalLayout {
 			return false;
 		}
 		//auf existenz überprüfen
-		
-		
-			if(txtEmail.getValue() == userDao.findByEmail(txtEmail.getValue()).getEmail()) {
-				Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
-				return false;
-			}
-		
+		if(txtEmail.getValue() == userDao.findByEmail(txtEmail.getValue()).getEmail()) {
+			Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
+			return false;
+		}
 		
 		return true;
 	}

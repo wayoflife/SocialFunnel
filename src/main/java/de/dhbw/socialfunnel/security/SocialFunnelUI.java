@@ -11,7 +11,6 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -28,9 +27,6 @@ import de.dhbw.socialfunnel.view.UserView;
 @PreserveOnRefresh
 @SpringUI
 public class SocialFunnelUI extends UI {
-	
-	@Autowired
-	private HelloBean hello;
 	
 	@Autowired
 	private SpringViewProvider viewProvider;
@@ -55,14 +51,6 @@ public class SocialFunnelUI extends UI {
         navigationBar.addComponent(createNavigationButton("database test", DatabaseTest.VIEW_NAME));
         root.addComponent(navigationBar);
         
-        Button button = new Button("Click Me");
-        button.addClickListener(new Button.ClickListener() {
-        	public void buttonClick(ClickEvent event) {
-        		root.addComponent(new Label(hello.getMessage()));
-        	}
-        });
-        root.addComponent(button);
-
         final Panel viewContainer = new Panel();
         viewContainer.setSizeFull();
         root.addComponent(viewContainer);

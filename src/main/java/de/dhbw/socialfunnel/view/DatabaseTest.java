@@ -17,7 +17,7 @@ import de.dhbw.socialfunnel.dao.UserDao;
 import de.dhbw.socialfunnel.model.User;
 
 @SpringView(name = DatabaseTest.VIEW_NAME)
-public class DatabaseTest extends HorizontalLayout implements View {
+public class DatabaseTest extends VerticalLayout implements View {
 		
 		public final static String VIEW_NAME = "dbtest";
 		

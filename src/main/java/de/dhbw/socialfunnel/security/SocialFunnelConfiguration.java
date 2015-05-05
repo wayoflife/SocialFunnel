@@ -16,11 +16,6 @@ import de.dhbw.socialfunnel.view.component.RegisterFormListener;
 public class SocialFunnelConfiguration {
 	
 	@Bean
-	public HelloBean helloBean(){
-		return new HelloBean();
-	}
-	
-	@Bean
 	public LoginFormListener loginFormListener() {
 		return new LoginFormListener();
 	}

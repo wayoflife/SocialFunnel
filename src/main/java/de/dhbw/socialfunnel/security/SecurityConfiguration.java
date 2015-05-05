@@ -20,6 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.inMemoryAuthentication().withUser("guest").password("password").roles("USER");
 		super.configure(auth);
 	}
 	
@@ -28,6 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		//Ignoring static resources
 		web.ignoring().antMatchers("/VAADIN/**");
 	}
+	
+	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
