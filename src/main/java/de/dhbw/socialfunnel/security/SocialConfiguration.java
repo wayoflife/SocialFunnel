@@ -19,36 +19,37 @@ import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.facebook.api.User;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
-@Configuration
-@EnableSocial
+//@Configuration
+//@EnableSocial
 public class SocialConfiguration {
 
-	@Bean
-	public ConnectionFactoryLocator connectionFactoryLocator() {
-	    ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
-	        environment.getProperty("facebook.clientSecret")));
-	    return registry;
-	}
-
-	@Inject
-	private Environment environment;
-	
-	@Bean
-	public UsersConnectionRepository usersConnectionRepository() {
-	    JdbcUsersConnectionRepository repository = new JdbcUsersConnectionRepository(dataSource, 
-	        connectionFactoryLocator(), Encryptors.noOpText());
-	    repository.setConnectionSignUp(new SimpleConnectionSignUp());
-	    return repository;
-	}
-
-	@Inject
-	private DataSource dataSource;
-	
-	@Bean
-	@Scope(value="request", proxyMode=ScopedProxyMode.INTERFACES)
-	public ConnectionRepository connectionRepository() {
-	    User user = SecurityContext.getCurrentUser();
-	    return usersConnectionRepository().createConnectionRepository(user.getId());
-	}
+//	@Bean
+//	public ConnectionFactoryLocator connectionFactoryLocator() {
+//	    ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
+//	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
+//	        environment.getProperty("facebook.clientSecret")));
+//	    return registry;
+//	}
+//
+//	@Inject
+//	private Environment environment;
+//	
+//	@Bean
+//	public UsersConnectionRepository usersConnectionRepository() {
+//	    JdbcUsersConnectionRepository repository = new JdbcUsersConnectionRepository(dataSource, 
+//	        connectionFactoryLocator(), Encryptors.noOpText());
+////	    repository.setConnectionSignUp(new SimpleConnectionSignUp());
+//	    return repository;
+//	}
+//
+//	@Inject
+//	private DataSource dataSource;
+//	
+//	@Bean
+//	@Scope(value="request", proxyMode=ScopedProxyMode.INTERFACES)
+//	public ConnectionRepository connectionRepository() {
+////	    User user = SecurityContext.getCurrentUser();
+////	    return usersConnectionRepository().createConnectionRepository(user.getId());
+//		return null;
+//	}
 }
