@@ -24,12 +24,12 @@ public class AuthManager implements AuthenticationManager {
 		String password = (String) auth.getCredentials();
 		System.out.println(username + " " + password);
 		UserDetails user = userService.loadUserByUsername(username);
+		
 		if (user != null && user.getPassword().equals(password)) {
-			Collection<? extends GrantedAuthority> authorities = user
-					.getAuthorities();
-			return new UsernamePasswordAuthenticationToken(username, password,
-					authorities);
+			Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
+			return new UsernamePasswordAuthenticationToken(username, password, authorities);
 		}
+		
 		throw new BadCredentialsException("Bad Credentials");
 	}
 }

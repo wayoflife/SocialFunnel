@@ -26,11 +26,6 @@ public class RootController {
 	
 	@RequestMapping(value="/facebook", method=RequestMethod.GET)
 	public String redirectFacebook() {
-		if(facebook != null && facebook.isAuthorized()){
-			System.out.println("facebook authorisiert");
-			return "redirect:/ui";
-		} else {
-			return "/auth/facebook";
-		}
+		return "/auth/facebook";
 	}
 }

@@ -1,6 +1,6 @@
 package de.dhbw.socialfunnel.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,4 +33,5 @@ public class MockedTests {
 		assertEquals("Otto", mockedNetworks.findById(1).getUser().getName());
 		assertEquals("11.01.1803", mockedNetworks.findById(1).getUser().getDateOfBirth());
 	}
+	
 }
