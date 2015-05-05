@@ -18,16 +18,11 @@ import de.dhbw.socialfunnel.model.User;
 
 @SpringView(name = DatabaseTest.VIEW_NAME)
 public class DatabaseTest extends HorizontalLayout implements View {
-
-	
 		
-		public final static String VIEW_NAME = "register";
+		public final static String VIEW_NAME = "dbtest";
+		
 		@Autowired
 		private UserDao userDao;
-		
-		private VerticalLayout vl_left = new VerticalLayout();
-		private VerticalLayout vl_right = new VerticalLayout();
-
 		
 		@PostConstruct
 	    void init() {
@@ -35,15 +30,17 @@ public class DatabaseTest extends HorizontalLayout implements View {
 			setMargin(true);
 			setSpacing(true);
 			
-			addComponent(vl_left);
-			addComponent(vl_right);
-			
 			List<User> a = userDao.getAll();
 			
 			for (int i = 0; i < a.size(); i++) {
-				addComponent(new Label(a.get(i).getName()));
+				VerticalLayout temp = new VerticalLayout();
+				addComponent(temp);
+				
+				temp.addComponent(new Label(a.get(i).getUserId()+""));
+				temp.addComponent(new Label(a.get(i).getName()));
+				temp.addComponent(new Label(a.get(i).getEmail()));
+				temp.addComponent(new Label(a.get(i).getDateOfBirth()));
 			}
-			
 		}
 
 		@Override

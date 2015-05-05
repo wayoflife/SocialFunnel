@@ -17,6 +17,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
+import de.dhbw.socialfunnel.view.DatabaseTest;
 import de.dhbw.socialfunnel.view.ErrorView;
 import de.dhbw.socialfunnel.view.LoginView;
 import de.dhbw.socialfunnel.view.MainpageView;
@@ -51,6 +52,7 @@ public class SocialFunnelUI extends UI {
         navigationBar.addComponent(createNavigationButton("View User", UserView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View error", ErrorView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View facebook", NetworkView.VIEW_NAME));
+        navigationBar.addComponent(createNavigationButton("database test", DatabaseTest.VIEW_NAME));
         root.addComponent(navigationBar);
         
         Button button = new Button("Click Me");
