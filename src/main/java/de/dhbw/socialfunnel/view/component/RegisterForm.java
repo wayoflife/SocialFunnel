@@ -1,8 +1,5 @@
 package de.dhbw.socialfunnel.view.component;
 
-import java.io.FileNotFoundException;
-import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.data.Property.ReadOnlyException;
@@ -25,9 +22,8 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import de.dhbw.socialfunnel.dao.UserDaoImpl;
+import de.dhbw.socialfunnel.dao.UserDao;
 import de.dhbw.socialfunnel.model.User;
-import de.dhbw.socialfunnel.todo.DBHelper;
 
 @UIScope
 @SpringComponent
@@ -35,7 +31,7 @@ public class RegisterForm extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	private UserDaoImpl userDao;
+	private UserDao userDao;
 	
 	private TextField txtFirstName;
 	private TextField txtSecondName;
