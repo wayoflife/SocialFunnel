@@ -19,6 +19,7 @@ import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.connect.web.ProviderSignInController;
 import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
 @Configuration
 @EnableSocial
@@ -33,8 +34,8 @@ public class SocialConfiguration extends SocialConfigurerAdapter{
 	@Bean
 	public ConnectionFactoryLocator connectionFactoryLocator() {
 	    ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-//	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
-//	        environment.getProperty("facebook.clientSecret")));
+	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
+	        environment.getProperty("facebook.clientSecret")));
 	    return registry;
 	}
 	
