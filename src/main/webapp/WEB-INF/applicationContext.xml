@@ -19,8 +19,7 @@
     <mvc:annotation-driven/>
     <tx:annotation-driven/>
     
-    <bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
 			<value>org.hsqldb.jdbcDriver</value>
 		</property>
@@ -31,9 +30,7 @@
 		<property name="username">
 			<value>sa</value>
 		</property>
-		<property name="password">
-			<value></value>
-		</property>
+		<property name="password"><value></value></property>
 	</bean>
 
 	<bean id="entityManagerFactory"
