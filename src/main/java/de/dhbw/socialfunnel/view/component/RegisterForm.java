@@ -146,7 +146,7 @@ public class RegisterForm extends VerticalLayout {
 			return false;
 		}
 		//auf existenz überprüfen
-		if(txtEmail.getValue() == userDao.findByEmail(txtEmail.getValue()).getEmail()) {
+		if(txtEmail.getValue().equals(userDao.findByEmail(txtEmail.getValue()).getEmail())) {
 			Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
 			return false;
 		}
