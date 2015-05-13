@@ -217,14 +217,31 @@
 				</configuration>
 				<version>3.3</version>
 			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-surefire-plugin</artifactId> -->
+<!-- 				<version>2.4.3</version> -->
+<!-- 				<configuration> -->
+<!-- 					<includes> -->
+<!-- 						<include>**/*Test*.java</include> -->
+<!-- 					</includes> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.4.3</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
-					<includes>
-						<include>**/*Test*.java</include>
-					</includes>
+					<format>xml</format>
+					<maxmem>256m</maxmem>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<repoToken>wKuaRLwWtYsgqMxBrtTVciyZcnweAqffl</repoToken>
 				</configuration>
 			</plugin>
 		</plugins>
