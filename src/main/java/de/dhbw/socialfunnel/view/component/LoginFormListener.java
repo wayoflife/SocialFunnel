@@ -1,6 +1,5 @@
 package de.dhbw.socialfunnel.view.component;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.vaadin.ui.Button;

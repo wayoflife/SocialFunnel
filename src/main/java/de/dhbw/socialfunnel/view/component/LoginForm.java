@@ -2,7 +2,6 @@ package de.dhbw.socialfunnel.view.component;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 
 import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringComponent;
@@ -12,7 +11,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 @UIScope
