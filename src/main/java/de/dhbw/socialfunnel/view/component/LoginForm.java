@@ -57,10 +57,8 @@ public class LoginForm extends VerticalLayout {
 			@Override
 			public void buttonClick(Button.ClickEvent event) {
 				try {
-					Button source = event.getButton();
-					LoginForm parent = (LoginForm) source.getParent();
-					String username = parent.getTxtLogin().getValue();
-					String password =  PWCrypt.getInstance().encrypt(parent.getTxtPassword().getValue());
+					String username = getTxtLogin().getValue();
+					String password =  PWCrypt.getInstance().encrypt(getTxtPassword().getValue());
 					UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 							username, password);
 					Authentication result = authManager.authenticate(request);
