@@ -4,8 +4,12 @@
 <meta charset="ISO-8859-1">
 <title>SocialFunnel</title>
 </head>
-<body>
-<div style="width:100%; height:30px; background-color:#cccccc;">Banner</div>
-<iframe src="http://http://socialfunnel.it.dh-karlsruhe.de:8080/SocialFunnel" style="width:100%; height:100%;"></iframe>
-</body>
+ <frameset rows="100%,*">
+        <frame src="http://socialfunnel.it.dh-karlsruhe.de:8080/SocialFunnel">
+        <noframes>
+            <body>
+                Your browser does not support frames. To wiew this page please use supporting browsers.
+            </body>
+        </noframes>
+    </frameset>
 </html>
