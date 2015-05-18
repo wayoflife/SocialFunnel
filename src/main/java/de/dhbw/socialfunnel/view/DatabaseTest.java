@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.navigator.View;
@@ -19,6 +21,7 @@ import de.dhbw.socialfunnel.model.User;
 public class DatabaseTest extends VerticalLayout implements View {
 		
 		public final static String VIEW_NAME = "dbtest";
+		static final Logger logger = LogManager.getLogger(DatabaseTest.class.getName());
 		
 		@Autowired
 		private UserDao userDao;
