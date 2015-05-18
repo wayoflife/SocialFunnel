@@ -3,6 +3,7 @@ package de.dhbw.socialfunnel.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
@@ -37,7 +38,12 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public User findByEmail(String email) {
-		return em.createQuery("SELECT u FROM User u WHERE email ='"+email+"'", User.class).getSingleResult();
+		User foundUser = null;
+		try {
+			foundUser = em.createQuery("SELECT u FROM User u WHERE email ='"+email+"'", User.class).getSingleResult();
+		} catch (NoResultException e) {
+		}
+		return foundUser;
 	}
 
 
