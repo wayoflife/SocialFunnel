@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.spring.access.ViewAccessControl;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Button;
@@ -22,7 +21,7 @@ import de.dhbw.socialfunnel.view.component.Logo;
 
 @UIScope
 @SpringView(name = LoginView.VIEW_NAME)
-public class LoginView extends HorizontalLayout implements View, ViewAccessControl {
+public class LoginView extends HorizontalLayout implements View {
 	
 	public final static String VIEW_NAME = "";
 	
@@ -35,7 +34,6 @@ public class LoginView extends HorizontalLayout implements View, ViewAccessContr
 	@Autowired
 	private LoginForm loginForm;
 	
-	@Autowired
 	private Logo logo;
 	
 	@PostConstruct
@@ -60,6 +58,7 @@ public class LoginView extends HorizontalLayout implements View, ViewAccessContr
 		vl_left.addComponent(loginForm);
 		vl_left.addComponent(lblKeinAccount);
 		vl_left.addComponent(btnRegister);
+		logo = new Logo();
 		vl_right.addComponent(logo);
 	}
 	
@@ -67,10 +66,4 @@ public class LoginView extends HorizontalLayout implements View, ViewAccessContr
 	public void enter(ViewChangeEvent event) {
 		//
 	}
-
-	@Override
-	public boolean isAccessGranted(UI ui, String beanName) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-};
+}
