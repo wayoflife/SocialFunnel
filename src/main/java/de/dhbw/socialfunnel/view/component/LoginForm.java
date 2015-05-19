@@ -56,7 +56,7 @@ public class LoginForm extends VerticalLayout {
 		    public void buttonClick(ClickEvent event) {
 		    	try {
 					String username = getTxtLogin().getValue();
-					String password =  PWCrypt.getInstance().encrypt(getTxtPassword().getValue());
+					String password = getTxtPassword().getValue();
 					UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 							username, password);
 					Authentication result = authManager.authenticate(request);
