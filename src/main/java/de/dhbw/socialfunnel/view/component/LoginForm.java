@@ -11,6 +11,7 @@ import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 import com.vaadin.ui.Notification;
@@ -18,7 +19,6 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
 import de.dhbw.socialfunnel.security.AuthManager;
 import de.dhbw.socialfunnel.todo.PWCrypt;
@@ -51,12 +51,10 @@ public class LoginForm extends VerticalLayout {
 		
 		//TODO einen Loginform listener hinzufügen um das login abzuarbeiten
 		//Seite sollte umgebaut werden, ist so ziemlicher bullshit
-		//btnLogin.addClickListener(null);
-//		btnLogin.addClickListener(listener);
-		btnLogin = new Button("Login", new Button.ClickListener() {
-			@Override
-			public void buttonClick(Button.ClickEvent event) {
-				try {
+		
+		btnLogin.addClickListener(new Button.ClickListener() {
+		    public void buttonClick(ClickEvent event) {
+		    	try {
 					String username = getTxtLogin().getValue();
 					String password =  PWCrypt.getInstance().encrypt(getTxtPassword().getValue());
 					UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
@@ -69,9 +67,7 @@ public class LoginForm extends VerticalLayout {
 				} catch (Exception e) {
 					Notification.show("Authentication failed: Unknown error");
 				}
-			}
-			
-				
+		    }
 		});
 	}
 
