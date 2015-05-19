@@ -19,7 +19,9 @@ public class TestingView extends VerticalLayout implements View {
 		setMargin(true);
 		setSpacing(true);
 		
-		addComponent(new Label("Access Denid"));
+		addComponent(new Label("Access Denied"));
+		addComponent(new Label("Hier muss noch was rein"));
+		addComponent(new Label("Änderungen für git push"));
 	}
 	
 	@Override
