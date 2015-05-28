@@ -36,7 +36,7 @@ public class MockedTests {
 	
 	@Test
 	
-	public void countCalls() {
+	public void countCalls() {		
 		
 		User mockedUser = new User("Otto", "otto@mail.com", "hallo", "11.01.1803");
 		Networks mockedNetwork = new Networks("Facebook", "1", mockedUser);
