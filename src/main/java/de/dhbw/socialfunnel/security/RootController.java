@@ -26,6 +26,6 @@ public class RootController {
 	
 	@RequestMapping(value="/facebook", method=RequestMethod.GET)
 	public String redirectFacebook() {
-		return "/auth/facebook";
+		return "/connect/facebook";
 	}
 }
