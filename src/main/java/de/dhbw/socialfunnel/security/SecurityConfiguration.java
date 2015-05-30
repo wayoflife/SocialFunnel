@@ -41,7 +41,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .accessDeniedPage( "/403" )
         .and()
 
-  
 	    .authorizeRequests()
 	        .antMatchers( "/login**" ).permitAll()
 	        .antMatchers( "/admin/**" ).hasRole( "ADMIN" )
@@ -49,8 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .and()
 	    .requiresChannel()
 	        .anyRequest().requiresSecure()
-	        .and()
-	
+	        .and()	
 	    
 	    .formLogin()
 	        .loginPage( "/login" )
@@ -60,7 +58,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .usernameParameter( "username" )
 	        .passwordParameter( "password" )
 	        .and()
-	
 	   
 	    .logout()
 	        .logoutRequestMatcher( new AntPathRequestMatcher( "/logout" ) )
@@ -68,7 +65,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .deleteCookies( "JSESSIONID" )
 	        .invalidateHttpSession( true )
 	        .and()
-	
 	   
 	    .sessionManagement()
 	        .invalidSessionUrl( "/login?time=1" )
