@@ -3,6 +3,7 @@ package de.dhbw.socialfunnel.security;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.annotations.PreserveOnRefresh;
+import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
@@ -24,6 +25,7 @@ import de.dhbw.socialfunnel.view.NetworkView;
 import de.dhbw.socialfunnel.view.RegisterView;
 import de.dhbw.socialfunnel.view.UserView;
 
+@Theme(value="socialfunnel")
 @PreserveOnRefresh
 @SpringUI
 public class SocialFunnelUI extends UI {

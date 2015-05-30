@@ -48,7 +48,6 @@ public class RegisterForm extends VerticalLayout {
 		initButtons();
 		initFields();
 		
-		this.setStyleName("blackwindow");
 		lblRegistrieren.setStyleName("h1");
 		
 		addComponent(lblRegistrieren);
