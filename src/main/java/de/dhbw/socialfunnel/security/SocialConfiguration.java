@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.core.env.Environment;
@@ -19,9 +20,11 @@ import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.connect.web.ProviderSignInController;
 import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
 @Configuration
 @EnableSocial
+@PropertySource("classpath:application.properties")
 public class SocialConfiguration extends SocialConfigurerAdapter{
 	
 	@Autowired
@@ -33,8 +36,8 @@ public class SocialConfiguration extends SocialConfigurerAdapter{
 	@Bean
 	public ConnectionFactoryLocator connectionFactoryLocator() {
 	    ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-//	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
-//	        environment.getProperty("facebook.clientSecret")));
+	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
+	        environment.getProperty("facebook.clientSecret")));
 	    return registry;
 	}
 	

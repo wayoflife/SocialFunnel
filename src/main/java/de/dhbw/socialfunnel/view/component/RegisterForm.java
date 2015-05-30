@@ -9,7 +9,7 @@ import com.vaadin.data.validator.StringLengthValidator;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.ViewScope;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.AbstractTextField.TextChangeEventMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -25,7 +25,7 @@ import com.vaadin.ui.VerticalLayout;
 import de.dhbw.socialfunnel.dao.UserDao;
 import de.dhbw.socialfunnel.model.User;
 
-@ViewScope
+@UIScope
 @SpringComponent
 public class RegisterForm extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
@@ -146,7 +146,11 @@ public class RegisterForm extends VerticalLayout {
 			return false;
 		}
 		//auf existenz überprüfen
-		if(txtEmail.getValue().equals(userDao.findByEmail(txtEmail.getValue()).getEmail())) {
+		if(userDao.findByEmail(txtEmail.getValue()) == null){
+			return true;
+		}
+		else if (txtEmail.getValue().equals(userDao.findByEmail(txtEmail.getValue()).getEmail()))			
+		{
 			Notification.show("This email is already registered!", Notification.Type.WARNING_MESSAGE);
 			return false;
 		}

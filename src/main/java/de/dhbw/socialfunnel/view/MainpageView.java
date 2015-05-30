@@ -1,10 +1,13 @@
 package de.dhbw.socialfunnel.view;
 
+import java.io.File;
+
 import javax.annotation.PostConstruct;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import de.dhbw.socialfunnel.view.component.Headline;
@@ -23,6 +26,8 @@ public class MainpageView extends VerticalLayout implements View{
 	void init() {
 //		addComponent(headline);
 		addComponent(menubar);
+		File file = new File("~");
+		addComponent(new Label(file.getAbsolutePath()));
 	}
 
 	@Override

@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
 import de.dhbw.socialfunnel.view.component.Logo;
 import de.dhbw.socialfunnel.view.component.RegisterForm;
 
+@UIScope
 @SpringView(name = RegisterView.VIEW_NAME)
 public class RegisterView extends HorizontalLayout implements View {
 	
@@ -24,7 +26,6 @@ public class RegisterView extends HorizontalLayout implements View {
 	@Autowired
 	private RegisterForm registerForm;
 
-	@Autowired
 	private Logo logo;
 	
 	@PostConstruct
@@ -37,6 +38,7 @@ public class RegisterView extends HorizontalLayout implements View {
 		addComponent(vl_right);
 		
 		vl_left.addComponent(registerForm);
+		logo = new Logo();
 		vl_right.addComponent(logo);
 	}
 
