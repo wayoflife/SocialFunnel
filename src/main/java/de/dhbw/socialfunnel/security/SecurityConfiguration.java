@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+import org.vaadin.spring.sample.security.VaadinSpringSocialConfigurer;
 
 
 @EnableWebSecurity
@@ -34,7 +36,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
+		LoginUrlAuthenticationEntryPoint authenticationEntryPoint = new LoginUrlAuthenticationEntryPoint("/ui/signin");
+		
 		http.csrf().disable().authorizeRequests().antMatchers("**").permitAll();
+		http
+		.authorizeRequests()								
+			.antMatchers("/auth", "/ui/signin", "/ui/signup", "/ui/UIDL/**").permitAll()				
+			.antMatchers("/**").authenticated()
+			.and()			
+		.exceptionHandling()
+			.authenticationEntryPoint(authenticationEntryPoint)
+			.and()
+		.apply(new VaadinSpringSocialConfigurer().signupUrl("/ui/signup").postLoginUrl("/ui/").postFailureUrl("/ui/signin"))
+			.and()
+		.logout()
+			.logoutSuccessUrl("/ui/signin")
+			.deleteCookies("JSESSIONID")
+			.and()
+		.csrf().disable();
 	}
 	
 }
