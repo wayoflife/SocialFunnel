@@ -32,12 +32,13 @@ public class SocialConfiguration extends SocialConfigurerAdapter{
 
 	@Autowired
 	private DataSource dataSource;
-	
+			
 	@Bean
 	public ConnectionFactoryLocator connectionFactoryLocator() {
 	    ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-	    registry.addConnectionFactory(new FacebookConnectionFactory(environment.getProperty("facebook.clientId"),
-	        environment.getProperty("facebook.clientSecret")));
+	    registry.addConnectionFactory(new FacebookConnectionFactory(
+	    		environment.getProperty("spring.social.facebook.appId"),
+	    		environment.getProperty("spring.social.facebook.appSecret")));
 	    return registry;
 	}
 	

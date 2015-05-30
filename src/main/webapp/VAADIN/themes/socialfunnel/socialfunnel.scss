@@ -1,0 +1,30 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin socialfunnel {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+
+/* Author : Daniel Betsche */
+
+.blackwindow{
+	background : black;
+}
+
+.post{
+	border : 1px solid black;
+	margin : 30px;
+}
+
+.redpanel{
+	background : red;
+}
+
+.test{
+	font: bold;
+}
+
+}
