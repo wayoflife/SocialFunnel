@@ -36,39 +36,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http
-		.exceptionHandling()
-        .accessDeniedPage( "/403" )
-        .and()
-
-	    .authorizeRequests()
-	        .antMatchers( "/login**" ).permitAll()
-	        .antMatchers( "/admin/**" ).hasRole( "ADMIN" )
-	        .anyRequest().authenticated()
-	        .and()
-	    .requiresChannel()
-	        .anyRequest().requiresSecure()
-	        .and()	
-	    
-	    .formLogin()
-	        .loginPage( "/login" )
-	        .loginProcessingUrl( "/login.do" )
-	        .defaultSuccessUrl( "/" )
-	        .failureUrl( "/login?err=1" )
-	        .usernameParameter( "username" )
-	        .passwordParameter( "password" )
-	        .and()
-	   
-	    .logout()
-	        .logoutRequestMatcher( new AntPathRequestMatcher( "/logout" ) )
-	        .logoutSuccessUrl( "/login?out=1" )
-	        .deleteCookies( "JSESSIONID" )
-	        .invalidateHttpSession( true )
-	        .and()
-	   
-	    .sessionManagement()
-	        .invalidSessionUrl( "/login?time=1" )
-	        .maximumSessions( 1 );
+		
 	}
-	
 }
