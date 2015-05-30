@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: SocialFunnel
+Implementation-Version: 1.0.0
+Implementation-Vendor-Id: de.dhbw.se
 Build-Jdk: 1.7.0_21
 Built-By: xce35d2
 Created-By: Maven Integration for Eclipse
+Main-Class: de.dhbw.socialfunnel.security.Application
 
