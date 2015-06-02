@@ -24,8 +24,8 @@ public class RootController {
 		return "redirect:/ui";
 	}
 	
-	@RequestMapping(value="/facebook", method=RequestMethod.GET)
+	@RequestMapping(value="/facebook")
 	public String redirectFacebook() {
-		return "/connect/facebook";
+		return "redirect:/connect/facebook";
 	}
 }
