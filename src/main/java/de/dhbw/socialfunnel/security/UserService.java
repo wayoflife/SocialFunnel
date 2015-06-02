@@ -38,7 +38,11 @@ public class UserService implements UserDetailsService {
 		// userinfo = new DBHelper().getUserByName(username);
 		if (userinfo[0] == null) {
 			return null;
-		} else {
+		} 
+		if (userinfo[0] == ""){
+			return null;
+		}
+		else {
 			authorities.add(new SimpleGrantedAuthority("CLIENT"));
 			User user = new User(userinfo[0], userinfo[1], true, true, false,
 					false, authorities);
