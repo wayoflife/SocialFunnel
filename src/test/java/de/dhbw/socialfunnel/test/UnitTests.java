@@ -1,11 +1,16 @@
 package de.dhbw.socialfunnel.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.net.URL;
 
 import org.junit.Test;
 
+import com.google.gwt.thirdparty.guava.common.io.Resources;
+
 import de.dhbw.socialfunnel.todo.PWCrypt;
+import de.dhbw.socialfunnel.view.component.Logo;
 
 public class UnitTests {
 
@@ -59,4 +64,12 @@ public class UnitTests {
 	public void dbUser() throws Exception {
 		
 	}	
+	
+	@Test
+	public void imageGeladen() throws Exception {
+		Logo logo = new Logo();
+		
+		logo.display();
+		
+	}
 }

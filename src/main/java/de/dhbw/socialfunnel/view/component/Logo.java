@@ -18,10 +18,12 @@ public class Logo extends VerticalLayout implements LogoApi{
 				+ "mitzuteilen", ContentMode.HTML);
 		this.addComponent(imgLogo);
 		this.addComponent(lblWerbespruch);
+		
 	}
 	
 	@Override
 	public void display() {
+//		System.out.println("Bild angefordert");
 		if(imgLogo==null)imgLogo = new LogoImage();
 		imgLogo.display();
 	}
@@ -39,7 +41,7 @@ public class Logo extends VerticalLayout implements LogoApi{
 	}
 	
 	@Override
-	public void setWidth(String width) {
+	public void setWidth(String width){
 		if(imgLogo==null)imgLogo = new LogoImage();
 		imgLogo.setWidth(width);
 	}

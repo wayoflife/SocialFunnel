@@ -14,13 +14,22 @@ public class LogoImage extends Image implements LogoApi{
 	
 	@Override
 	public void display() {
-		this.setSource(new FileResource(new File(
-				VaadinService.getCurrent()
-				 .getBaseDirectory()
-				 .getAbsolutePath() 
-				 + "/WEB-INF/images/logo.png")));
-		this.setWidth("300px");
-		this.setHeight("300px");
+		if(this.getSource() == null){
+			if(null != VaadinService.getCurrent()){
+				this.setSource(new FileResource(new File(
+						VaadinService.getCurrent()
+						.getBaseDirectory()
+						.getAbsolutePath() 
+						+ "/WEB-INF/images/logo.png")));
+			} else {
+				this.setSource(new FileResource(new File(
+						"/src/main/webapp/WEB-INF/images/logo.png")));
+			}
+//			System.out.println("Bild geladen");
+			
+			this.setWidth("300px");
+			this.setHeight("300px");
+		}
 	}
 	
 	@Override

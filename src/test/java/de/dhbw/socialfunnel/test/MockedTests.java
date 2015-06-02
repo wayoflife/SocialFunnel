@@ -35,7 +35,6 @@ public class MockedTests {
 	}
 	
 	@Test
-	
 	public void countCalls() {
 		
 		User mockedUser = new User("Otto", "otto@mail.com", "hallo", "11.01.1803");
