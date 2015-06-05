@@ -34,15 +34,7 @@ public class MockedTests {
 		assertEquals("11.01.1803", mockedNetworks.findById(1).getUser().getDateOfBirth());
 	}
 	
-	@Test
-	public void countCalls() {		
-		
-		User mockedUser = new User("Otto", "otto@mail.com", "hallo", "11.01.1803");
-		Networks mockedNetwork = new Networks("Facebook", "1", mockedUser);
-		Mockito.when(mockedNetworks.findById(1)).thenReturn(mockedNetwork);
-		Mockito.verify(mockedNetwork, Mockito.times(1));
 
-	}
 
 	
 
