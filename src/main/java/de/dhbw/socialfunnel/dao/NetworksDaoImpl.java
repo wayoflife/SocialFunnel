@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.dhbw.socialfunnel.model.Networks;
+import de.dhbw.socialfunnel.model.User;
 
 @Transactional
 @Component
@@ -34,4 +35,11 @@ public class NetworksDaoImpl implements NetworksDao{
 		return em.createQuery("SELECT n FROM Networks n WHERE networkId ='"+id+"'", Networks.class).getSingleResult();
 	}
 
+	@Override
+	public List<Networks> findByUser(User user) {
+        return em.createQuery("SELECT n FROM Networks n WHERE user="+user+"'", Networks.class).getResultList();
+
+	}
+
+	
 }
