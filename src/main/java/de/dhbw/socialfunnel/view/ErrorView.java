@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 @SpringView(name = ErrorView.VIEW_NAME)
 public class ErrorView extends VerticalLayout implements View {
 	
-	public final static String VIEW_NAME = "error";
+	public static final String VIEW_NAME = "error";
 	
 	@PostConstruct
 	void init() {
@@ -26,7 +26,6 @@ public class ErrorView extends VerticalLayout implements View {
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
 
 	}
 

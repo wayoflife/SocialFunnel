@@ -11,7 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 @SpringView(name = AccessDeniedView.VIEW_NAME)
 public class AccessDeniedView extends VerticalLayout implements View {
 
-	public final static String VIEW_NAME = "accessdenied";
+	public static final String VIEW_NAME = "accessdenied";
 	
 	@PostConstruct
 	void init() {
@@ -19,12 +19,11 @@ public class AccessDeniedView extends VerticalLayout implements View {
 		setMargin(true);
 		setSpacing(true);
 		
-		addComponent(new Label("Access Denid"));
+		addComponent(new Label("Access Denied"));
 	}
 	
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
 
 	}
 
