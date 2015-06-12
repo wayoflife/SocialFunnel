@@ -21,6 +21,9 @@ public class MainpageView extends VerticalLayout implements View{
 	private Headline headline = new Headline();
 	private SC_Menubar menubar = new SC_Menubar();
 	private VerticalLayout vlLeft = new VerticalLayout();
+	private VerticalLayout vlRight = new VerticalLayout();
+	private VerticalLayout vlCenter = new VerticalLayout();
+	private PostList postlist = new PostList();
 	
 	@PostConstruct
 	void init() {
@@ -28,6 +31,9 @@ public class MainpageView extends VerticalLayout implements View{
 		addComponent(menubar);
 		File file = new File("~");
 		addComponent(new Label(file.getAbsolutePath()));
+		addComponent(postlist);
+		
+		
 	}
 
 	@Override
