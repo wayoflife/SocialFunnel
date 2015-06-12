@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
@@ -23,15 +24,28 @@ public class MainpageView extends VerticalLayout implements View{
 	private VerticalLayout vlLeft = new VerticalLayout();
 	private VerticalLayout vlRight = new VerticalLayout();
 	private VerticalLayout vlCenter = new VerticalLayout();
+	private HorizontalLayout vlPosts = new HorizontalLayout();
 	private PostList postlist = new PostList();
 	
 	@PostConstruct
 	void init() {
 //		addComponent(headline);
 		addComponent(menubar);
-		File file = new File("~");
-		addComponent(new Label(file.getAbsolutePath()));
-		addComponent(postlist);
+		//File file = new File("~");
+		//addComponent(new Label(file.getAbsolutePath()));
+		addComponent(vlPosts);
+		vlPosts.addComponent(vlLeft);
+		vlPosts.addComponent(vlCenter);
+		vlPosts.addComponent(vlRight);
+		
+		vlLeft.setWidth("200px");
+		vlCenter.setWidth("60%");
+		vlRight.setWidth("200px");
+		
+		vlLeft.addComponent(new Label("Hier ist das linke Feld!"));
+		vlCenter.addComponent(postlist);
+		vlRight.addComponent(new Label("Hier ist das rechte Feld!"));
+		
 		
 		
 	}
