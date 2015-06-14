@@ -51,7 +51,7 @@ public class SocialFunnelUI extends UI {
         navigationBar.addComponent(createNavigationButton("View error", ErrorView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View facebook", NetworkView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("database test", DatabaseTest.VIEW_NAME));
-        root.addComponent(navigationBar);
+//        root.addComponent(navigationBar);
         
         final Panel viewContainer = new Panel();
         viewContainer.setSizeFull();

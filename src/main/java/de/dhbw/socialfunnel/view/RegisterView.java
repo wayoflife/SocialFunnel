@@ -44,5 +44,6 @@ public class RegisterView extends HorizontalLayout implements View {
 
 	@Override
 	public void enter(ViewChangeEvent event) {
+		logo.display();
 	}
 }

@@ -25,7 +25,7 @@ public class LogoImage extends Image implements LogoApi{
 				this.setSource(new FileResource(new File(
 						"/src/main/webapp/WEB-INF/images/logo.png")));
 			}
-//			System.out.println("Bild geladen");
+			System.out.println("Bild geladen");
 			
 			this.setWidth("300px");
 			this.setHeight("300px");

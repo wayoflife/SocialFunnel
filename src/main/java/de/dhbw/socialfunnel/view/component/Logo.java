@@ -23,7 +23,7 @@ public class Logo extends VerticalLayout implements LogoApi{
 	
 	@Override
 	public void display() {
-//		System.out.println("Bild angefordert");
+		System.out.println("Bild angefordert");
 		if(imgLogo==null)imgLogo = new LogoImage();
 		imgLogo.display();
 	}
