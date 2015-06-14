@@ -22,7 +22,7 @@ public class NetworkView extends VerticalLayout implements View {
 	
 	@PostConstruct
 	void init(){
-		addComponent(new Label("hier sollte facebook verbunden werden"));
+		addComponent(new Label("hier sollte facebook verbunden werden, und das niemals angezeigt werden"));
 	}
 	
 	@Override
