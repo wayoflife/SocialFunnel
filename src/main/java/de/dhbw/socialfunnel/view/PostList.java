@@ -8,11 +8,19 @@ import com.vaadin.ui.VerticalLayout;
 public class PostList extends VerticalLayout {
 	
 	public PostList() {
-		// TODO Auto-generated constructor stub
-		String content= "Hey Leute, heute Party im Ago. Drinks und Bier für nur <b>1 Euro</b> . Alle Mädels kriegen bis 12 kostenlosen Eintitt! Wer hat Bock?";
 		
-		for (int i = 0; i < 5; i++) {
-			Label post = new Label(content, ContentMode.HTML);
+		this.setSizeFull();
+		setMargin(false);
+		setSpacing(false);
+		// TODO Auto-generated constructor stub
+		String[] content= {"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam .",
+				"nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam ",
+				"erat, sed diam voluptua. At vero eos et accusam et justo duo ",
+				"dolores et ea rebum. Stet clita kasd gubergren, no sea takimata ",
+				"sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet"};
+		
+		for (String s : content) {
+			Label post = new Label(s, ContentMode.HTML);
 			this.addStyleName(" background-color: #98FB98");
 			post.setWidth("50%");
 			addComponent(post);

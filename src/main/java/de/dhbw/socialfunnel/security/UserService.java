@@ -20,29 +20,19 @@ public class UserService implements UserDetailsService {
 	private UserDao userDao;
 
 	@Override
-	public UserDetails loadUserByUsername(String username)
-			throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("CLIENT"));
 
-		String[] userinfo = new String[] { null, null };
+		String[] userinfo = new String[2];
 		de.dhbw.socialfunnel.model.User temp = userDao.findByEmail(username);
 		userinfo[0] = temp.getEmail();
 		userinfo[1] = temp.getPassword();
-		if (userinfo[0] == null) {
-			return null;
-		} 
-		if (userinfo[0] == ""){
-			return null;
-		}
-		else {
-			authorities.add(new SimpleGrantedAuthority("CLIENT"));
-			User user = new User(userinfo[0], userinfo[1], true, true, false,
-					false, authorities);
-			return user;
-		}
-		
+		if (userinfo[0] == null || userinfo[0] == "") return null;
+		authorities.add(new SimpleGrantedAuthority("CLIENT"));
+		User user = new User(userinfo[0], userinfo[1], true, true, false, false, authorities);
+		return user;
 	}
 }
 

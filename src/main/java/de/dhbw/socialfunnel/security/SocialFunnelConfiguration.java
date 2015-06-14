@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import com.vaadin.spring.annotation.EnableVaadin;
 
-import de.dhbw.socialfunnel.view.component.LoginFormListener;
 import de.dhbw.socialfunnel.view.component.LogoutListener;
 import de.dhbw.socialfunnel.view.component.RegisterFormListener;
 
@@ -15,10 +14,7 @@ import de.dhbw.socialfunnel.view.component.RegisterFormListener;
 @ComponentScan(basePackages = {"de.dhbw.socialfunnel.security", "de.dhbw.socialfunnel.view", "de.dhbw.socialfunnel.dao"})
 public class SocialFunnelConfiguration {
 	
-	@Bean
-	public LoginFormListener loginFormListener() {
-		return new LoginFormListener();
-	}
+
 	
 	@Bean
 	public RegisterFormListener registerFormListener() {

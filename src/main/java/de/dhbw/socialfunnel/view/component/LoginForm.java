@@ -30,7 +30,7 @@ public class LoginForm extends VerticalLayout {
 	@Autowired
 	private AuthManager authManager;
 	
-	private TextField txtLogin = new TextField("Login: ");
+	private TextField txtLogin = new TextField("Email: ");
 	private PasswordField txtPassword = new PasswordField("Password: ");
 	private Button btnLogin = new Button("Login");
 	private Label lblAnmelden = new Label("Anmelden");
@@ -55,8 +55,8 @@ public class LoginForm extends VerticalLayout {
 		btnLogin.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	try {
-					String username = getTxtLogin().getValue();
-					String password = getTxtPassword().getValue();
+					String username = txtLogin.getValue();
+					String password = txtPassword.getValue();
 					UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
 							username, password);
 					Authentication result = authManager.authenticate(request);
@@ -70,45 +70,12 @@ public class LoginForm extends VerticalLayout {
 		    }
 		});
 	}
-
-
+	
 	public TextField getTxtLogin() {
 		return txtLogin;
 	}
-
-	public void setTxtLogin(TextField txtLogin) {
-		this.txtLogin = txtLogin;
-	}
-
+	
 	public PasswordField getTxtPassword() {
 		return txtPassword;
-	}
-
-	public void setTxtPassword(PasswordField txtPassword) {
-		this.txtPassword = txtPassword;
-	}
-
-	public Button getBtnLogin() {
-		return btnLogin;
-	}
-
-	public void setBtnLogin(Button btnLogin) {
-		this.btnLogin = btnLogin;
-	}
-
-	public Label getLblAnmelden() {
-		return lblAnmelden;
-	}
-
-	public void setLblAnmelden(Label lblAnmelden) {
-		this.lblAnmelden = lblAnmelden;
-	}
-
-	public Link getLnkPasswortVergessen() {
-		return lnkPasswortVergessen;
-	}
-
-	public void setLnkPasswortVergessen(Link lnkPasswortVergessen) {
-		this.lnkPasswortVergessen = lnkPasswortVergessen;
 	}
 }

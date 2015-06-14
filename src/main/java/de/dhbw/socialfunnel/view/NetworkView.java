@@ -12,6 +12,8 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import de.dhbw.socialfunnel.view.component.SC_Menubar;
+
 @SpringView(name = NetworkView.VIEW_NAME)
 public class NetworkView extends VerticalLayout implements View {
 
@@ -22,6 +24,7 @@ public class NetworkView extends VerticalLayout implements View {
 	
 	@PostConstruct
 	void init(){
+		addComponent(new SC_Menubar());
 		addComponent(new Label("hier sollte facebook verbunden werden, und das niemals angezeigt werden"));
 	}
 	

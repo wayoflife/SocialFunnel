@@ -1,6 +1,10 @@
 package de.dhbw.socialfunnel.view.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.vaadin.data.Property.ReadOnlyException;
 import com.vaadin.data.validator.EmailValidator;
@@ -20,10 +24,12 @@ import com.vaadin.ui.Link;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import de.dhbw.socialfunnel.dao.UserDao;
 import de.dhbw.socialfunnel.model.User;
+import de.dhbw.socialfunnel.security.AuthManager;
 
 @UIScope
 @SpringComponent
@@ -32,6 +38,9 @@ public class RegisterForm extends VerticalLayout {
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private AuthManager authManager;
 	
 	private TextField txtFirstName;
 	private TextField txtSecondName;
@@ -122,13 +131,20 @@ public class RegisterForm extends VerticalLayout {
 											txtPassword.getValue(), 
 											txtGeburtstag.getValue().toString());
 						userDao.save(user);
+						UsernamePasswordAuthenticationToken request = new UsernamePasswordAuthenticationToken(
+								user.getEmail(), user.getPassword());
+						Authentication result = authManager.authenticate(request);
+						SecurityContextHolder.getContext().setAuthentication(result);
+						UI.getCurrent().getNavigator().navigateTo("user");
 					} catch (ReadOnlyException e) {
 						e.printStackTrace();
+					} catch (AuthenticationException e) {
+						Notification.show("Authentication failed: " + e.getMessage());
 					} catch (Exception e) {
 						Notification.show("Cannot connect to Database! Try again later.",
 								Notification.Type.WARNING_MESSAGE);
 						e.printStackTrace();
-					}
+					} 
 				}
 			}
         });		
