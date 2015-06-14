@@ -4,15 +4,10 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.UI;
 
-import de.dhbw.socialfunnel.view.DatabaseTest;
-import de.dhbw.socialfunnel.view.ErrorView;
 import de.dhbw.socialfunnel.view.HelpView;
-import de.dhbw.socialfunnel.view.LoginView;
 import de.dhbw.socialfunnel.view.MainpageView;
-import de.dhbw.socialfunnel.view.NetworkView;
 import de.dhbw.socialfunnel.view.NewPostView;
-import de.dhbw.socialfunnel.view.RegisterView;
-import de.dhbw.socialfunnel.view.UserView;
+import de.dhbw.socialfunnel.view.SocialView;
 
 public class SC_Menubar extends MenuBar{
 	
@@ -31,7 +26,7 @@ public class SC_Menubar extends MenuBar{
 				switch (selectedItem.getText()) {
 				case "Startseite" : navi.navigateTo(MainpageView.VIEW_NAME); break;
 				case "Neuer Post" : navi.navigateTo(NewPostView.VIEW_NAME); break;
-				case "Meine Netzwerke" : navi.navigateTo(NetworkView.VIEW_NAME); break;
+				case "Meine Netzwerke" : navi.navigateTo(SocialView.VIEW_NAME); break;
 				case "Einstellungen" : navi.navigateTo(MainpageView.VIEW_NAME); break;
 				case "Hilfe" : navi.navigateTo(HelpView.VIEW_NAME); break;
 				case "Abmelden" : getUI().addWindow(new LogoutWindow()); break;
