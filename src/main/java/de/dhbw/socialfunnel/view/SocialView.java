@@ -17,6 +17,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 import de.dhbw.socialfunnel.view.component.ConnectionInfo;
 import de.dhbw.socialfunnel.view.component.FormSender;
+import de.dhbw.socialfunnel.view.component.SC_Menubar;
 
 @UIScope
 @SpringView(name = SocialView.VIEW_NAME)
@@ -43,10 +44,11 @@ public class SocialView extends CustomComponent implements ClickListener, View  
 		setCompositionRoot(content);
 		content.setDefaultComponentAlignment(Alignment.TOP_CENTER);
 								
-		caption = new Label("My social networks connections", ContentMode.HTML);
+		caption = new Label("Meine sozialen Netzwerke", ContentMode.HTML);
 		caption.addStyleName(ValoTheme.LABEL_H1);
 		caption.addStyleName(ValoTheme.LABEL_NO_MARGIN);
 		caption.setSizeUndefined();
+		content.addComponent(new SC_Menubar());
 		content.addComponent(caption);
 		
 		facebookConnectionInfo = new ConnectionInfo("Facebook");
