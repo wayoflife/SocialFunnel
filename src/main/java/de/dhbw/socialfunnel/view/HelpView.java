@@ -1,5 +1,7 @@
 package de.dhbw.socialfunnel.view;
 
+import java.io.File;
+
 import javax.annotation.PostConstruct;
 
 import com.vaadin.navigator.View;
@@ -10,7 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import de.dhbw.socialfunnel.view.component.SC_Menubar;
 
-@SpringView(name = MainpageView.VIEW_NAME)
+@SpringView(name = HelpView.VIEW_NAME)
 public class HelpView extends VerticalLayout implements View{
 	
 	public final static String VIEW_NAME = "help";
@@ -19,6 +21,8 @@ public class HelpView extends VerticalLayout implements View{
 	void init() {
 		addComponent(new SC_Menubar());
 		addComponent(new Label("helpview"));
+		File file = new File("~");
+		addComponent(new Label(file.getAbsolutePath()));
 	}
 
 	@Override

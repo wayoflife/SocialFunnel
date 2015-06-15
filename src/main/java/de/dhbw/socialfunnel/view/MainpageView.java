@@ -25,8 +25,7 @@ public class MainpageView extends VerticalLayout implements View{
 	@PostConstruct
 	void init() {
 		addComponent(new SC_Menubar());
-		//File file = new File("~");
-		//addComponent(new Label(file.getAbsolutePath()));
+		
 		addComponent(vlPosts);
 		vlPosts.setSizeFull();
 		vlPosts.addComponent(vlLeft);
@@ -36,15 +35,12 @@ public class MainpageView extends VerticalLayout implements View{
 		vlPosts.addComponent(vlRight);
 		
 		vlLeft.setWidth("200px");
-		vlCenter.setWidth("60%");
+//		vlCenter.setWidth("60%");
 		vlRight.setWidth("200px");
 		
 		vlLeft.addComponent(new Label("Hier ist das linke Feld!"));
 		vlCenter.addComponent(postlist);
 		vlRight.addComponent(new Label("Hier ist das rechte Feld!"));
-		
-		
-		
 	}
 
 	@Override

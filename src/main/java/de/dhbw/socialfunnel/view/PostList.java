@@ -21,8 +21,8 @@ public class PostList extends VerticalLayout {
 		
 		for (String s : content) {
 			Label post = new Label(s, ContentMode.HTML);
-			this.addStyleName(" background-color: #98FB98");
-			post.setWidth("50%");
+			post.setSizeFull();
+			this.addStyleName("background-color: #98FB98");
 			addComponent(post);
 		}
 		
