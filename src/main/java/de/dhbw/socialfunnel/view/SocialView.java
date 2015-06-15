@@ -40,7 +40,7 @@ public class SocialView extends CustomComponent implements ClickListener, View  
 						
 		content = new VerticalLayout();
 		content.setSpacing(true);
-		content.setMargin(true);
+		content.setMargin(false);
 		setCompositionRoot(content);
 		content.setDefaultComponentAlignment(Alignment.TOP_CENTER);
 								
