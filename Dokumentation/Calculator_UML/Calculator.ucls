@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="de.youngdevelopers.calculator.controller.PocketCalculatorController" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/PocketCalculatorController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="292" x="3432" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="de.youngdevelopers.calculator.controller.commands.Command" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/Command.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="228" x="3695" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="de.youngdevelopers.calculator.controller.commands.CalculateCommand" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/CalculateCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="228" x="3695" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="de.youngdevelopers.calculator.controller.commands.ClearCommand" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/ClearCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="228" x="3963" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="de.youngdevelopers.calculator.controller.commands.OperatorCommand" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/OperatorCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="228" x="3427" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="de.youngdevelopers.calculator.controller.commands.InputDigitCommand" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/InputDigitCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="228" x="3159" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="de.youngdevelopers.calculator.controller.commands.InputCommand" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/controller/commands/InputCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="228" x="3159" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="de.youngdevelopers.calculator.loader.CalculatorLoader" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/loader/CalculatorLoader.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="233" x="611" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.MultiplicationCalculationStrategy" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/MultiplicationCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="257" x="2202" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.MinusCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/MinusCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="257" x="2796" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.BinaryCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/BinaryCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="257" x="2796" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.UnaryCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/UnaryCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="257" x="2162" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.SquareRootCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/SquareRootCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="257" x="1884" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.PlusCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/PlusCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="257" x="2499" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.DivisionCalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/DivisionCalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="257" x="3093" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" 
+    name="de.youngdevelopers.calculator.model.calculation.strategies.CalculationStrategy" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/calculation/strategies/CalculationStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="257" x="2658" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.OperatorSetPocketCalculatorState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/OperatorSetPocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="307" x="1230" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="de.youngdevelopers.calculator.model.pocketcalculator.PocketCalculator" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/PocketCalculator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="441" width="243" x="1215" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.FinishedPocketCalculatorState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/FinishedPocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="307" x="1944" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="de.youngdevelopers.calculator.model.pocketcalculator.PocketCalculatorState" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/PocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="346" x="1498" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.SecondOperandPocketCalculatorState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/SecondOperandPocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="307" x="1587" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="de.youngdevelopers.calculator.model.pocketcalculator.ClearPocketCalculatorState" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/ClearPocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="307" x="2301" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.PocketCalculatorStateSupport" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/PocketCalculatorStateSupport.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="243" x="1215" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.FirstOperandPocketCalculatorState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/FirstOperandPocketCalculatorState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="307" x="873" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.PocketCalculatorDisplay" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/PocketCalculatorDisplay.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="275" x="708" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="de.youngdevelopers.calculator.model.pocketcalculator.display.DisplayEventSupport" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/DisplayEventSupport.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="291" x="884" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.ClearDisplayState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/ClearDisplayState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="298" x="1088" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.FloatingPointDisplayState" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/FloatingPointDisplayState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="298" x="740" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.ErrorDisplayState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/ErrorDisplayState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="298" x="392" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.DisplayState" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/DisplayState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="298" x="535" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.IntegerDisplayState" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/IntegerDisplayState.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="298" x="44" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" 
+    name="de.youngdevelopers.calculator.model.pocketcalculator.display.states.DisplayStateSupport" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/model/pocketcalculator/display/states/DisplayStateSupport.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="298" x="197" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="33" language="java" name="de.youngdevelopers.calculator.view.CommandInvoker" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/CommandInvoker.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="3764" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="34" language="java" name="de.youngdevelopers.calculator.view.CalculatorView" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/CalculatorView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="244" x="3411" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="35" language="java" name="de.youngdevelopers.calculator.view.pocketcalculator.PocketCalculatorView" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/pocketcalculator/PocketCalculatorView.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="299" x="3093" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="de.youngdevelopers.calculator.view.texttospeech.TextToSpeechRuntimeException" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/texttospeech/TextToSpeechRuntimeException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="270" x="301" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="de.youngdevelopers.calculator.view.texttospeech.TextToSpeech" 
+    project="Calculator" file="/Calculator/src/de/youngdevelopers/calculator/view/texttospeech/TextToSpeech.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="217" x="44" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="38">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="39" name="instance"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="42">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="34"/>  
+  </realization>  
+  <realization id="43">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <association id="47">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="48" name="instance"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="51">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="52" name="state"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="55" name="command"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="59">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="60" name="instance"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="63" name="instance"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="65">    
+    <bendpoint x="3380" y="518"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <association id="67">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="68" name="instance"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="72">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="73" name="instance"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="76">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="77" name="instance"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="79">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <association id="81">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="82" name="instance"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="85" name="instance"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="87">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="88">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="89">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="90">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="91">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="92" name="instance"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="94">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <association id="95">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="96" name="views"/>      
+      <multiplicity id="97" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="98">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="99" name="display"/>      
+      <multiplicity id="100" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="101">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="102" name="instance"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="104">    
+    <bendpoint x="2171" y="518"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="106">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="107" name="instance"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="110" name="instance"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="112">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="113">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="114" name="instance"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <association id="117">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="118" name="state"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

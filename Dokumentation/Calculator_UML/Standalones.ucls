@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="de.youngdevelopers.calculator.loader.CalculatorLoader" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/loader/CalculatorLoader.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="233" x="298" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="de.youngdevelopers.calculator.view.texttospeech.TextToSpeechRuntimeException" 
+    project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/texttospeech/TextToSpeechRuntimeException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="270" x="571" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="de.youngdevelopers.calculator.view.texttospeech.TextToSpeech" project="Calculator" 
+    file="/Calculator/src/de/youngdevelopers/calculator/view/texttospeech/TextToSpeech.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="217" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
